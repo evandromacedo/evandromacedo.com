@@ -4,16 +4,22 @@ const theme = {
   // Header
   Header_SiteTitle1: `
     font-size: 16rem;
+    line-height: 14.4rem;
+    text-transform: lowercase;
   `,
   Header_SiteTitle2: `
     font-size: 10.8rem;
+    text-transform: lowercase;
   `,
   Header_AddInfo: `
     font-size: 3.2rem;
+    line-height: 5.6rem;
+    text-transform: lowercase;
   `,
   Header_MenuLink: `
     font-size: 2.1rem;
     font-weight: bold;
+    text-transform: uppercase;
   `,
 
   // Home
