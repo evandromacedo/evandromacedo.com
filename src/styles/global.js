@@ -98,11 +98,6 @@ const GlobalStyles = createGlobalStyle`
     font-size: 10px;
   }
 
-  body {
-    --accent: #01AEEF;
-    font-family: Garamond, Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
-
   body.light {
     --background: #F6F6F6;
     --text: #222222;
@@ -111,6 +106,13 @@ const GlobalStyles = createGlobalStyle`
   body.dark {
     --background: #282C35;
     --text: #F6F6F6;
+  }
+
+  body {
+    --accent: #01AEEF;
+    background: var(--background);
+    color: var(--text);
+    font-family: Garamond, Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 `
 
