@@ -22,4 +22,14 @@ export const MeWrapper = styled.a`
   .me:hover .tongue {
     transform: translate(7px, 9px);
   }
+
+  .me .fill {
+    fill: var(--text);
+    transition: all 0.4s;
+  }
+
+  .me .stroke {
+    stroke: var(--text);
+    transition: all 0.4s;
+  }
 `
