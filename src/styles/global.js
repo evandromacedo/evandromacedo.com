@@ -62,13 +62,21 @@ const GlobalStyles = createGlobalStyle`
   /* End of reset styles */
 
   html {
-    /* font-size: 10px; */
+    font-size: 10px;
   }
 
   body {
-    background: #16202c;
-    font-size: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --accent: #01AEEF;
+  }
+
+  body.light {
+    --background: #F6F6F6;
+    --text: #222222;
+  }
+
+  body.dark {
+    --background: #282C35;
+    --text: #F6F6F6;
   }
 `
 
