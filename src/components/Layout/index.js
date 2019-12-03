@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ThemeProvider } from 'styled-components'
 // import { useStaticQuery, graphql } from 'gatsby'
 
 import * as S from './styled'
 import GlobalStyles from '../../styles/global'
+import theme from '../../styles/theme'
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -19,7 +21,9 @@ const Layout = ({ children }) => {
   return (
     <S.LayoutWrapper>
       <GlobalStyles />
-      <main>{children}</main>
+      <ThemeProvider theme={theme}>
+        <main>{children}</main>
+      </ThemeProvider>
     </S.LayoutWrapper>
   )
 }
