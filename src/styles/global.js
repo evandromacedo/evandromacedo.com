@@ -112,6 +112,7 @@ const GlobalStyles = createGlobalStyle`
     --accent: #01AEEF;
     background: var(--background);
     color: var(--text);
+    transition: background 0.4s, color 0.4s;
     font-family: Garamond, Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 `
