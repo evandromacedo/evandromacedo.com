@@ -19,7 +19,7 @@ const SocialLinks = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Icon size="3.2rem" />
+              <Icon size="3.2rem" title={link.label} />
             </S.SocialLinksLink>
           </S.SocialLinksItem>
         )
