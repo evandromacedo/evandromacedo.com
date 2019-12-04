@@ -1,6 +1,8 @@
 import React from 'react'
 import { SearchAlt2 as Search } from 'styled-icons/boxicons-regular/SearchAlt2'
 
+import getPathname from '../../utils/getPathname'
+
 import * as S from './styled'
 
 const MenuLinks = () => (
@@ -28,10 +30,7 @@ const MenuLinks = () => (
   </S.MenuLinksWrapper>
 )
 
-const isBlogActive = () => {
-  return !['/about', '/projects', '/search'].includes(window.location.pathname)
-    ? true
-    : false
-}
+const isBlogActive = () =>
+  !['/about', '/projects', '/search'].includes(getPathname()) ? true : false
 
 export default MenuLinks

@@ -8,13 +8,13 @@ const Masthead = ({ addInfo }) => (
     <S.MastheadHeading>Evandro</S.MastheadHeading>
     <S.MastheadLowerText>
       <S.MastheadSubheading>Macedo</S.MastheadSubheading>
-      <S.MastheadAddInfo>{addInfo}</S.MastheadAddInfo>
+      <S.MastheadAddInfo>'s {addInfo}</S.MastheadAddInfo>
     </S.MastheadLowerText>
   </S.MastheadWrapper>
 )
 
 Masthead.defaultProps = {
-  addInfo: "'s random thoughts",
+  addInfo: 'random thoughts',
 }
 
 Masthead.propTypes = {

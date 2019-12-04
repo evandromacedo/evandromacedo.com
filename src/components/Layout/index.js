@@ -8,12 +8,12 @@ import theme from '../../styles/theme'
 
 import Header from '../Header'
 
-const Layout = ({ children, pathname }) => {
+const Layout = ({ children }) => {
   return (
     <S.LayoutWrapper>
       <GlobalStyles />
       <ThemeProvider theme={theme}>
-        <Header pathname={pathname} />
+        <Header />
         <S.LayoutMain>{children}</S.LayoutMain>
       </ThemeProvider>
     </S.LayoutWrapper>

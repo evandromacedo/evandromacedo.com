@@ -1,5 +1,6 @@
 import React from 'react'
 
+import getPathname from '../../utils/getPathname'
 import Me from '../Me'
 import Masthead from '../Masthead'
 import SocialLinks from '../SocialLinks'
@@ -9,8 +10,8 @@ import info from './content'
 
 import * as S from './styled'
 
-const Header = ({ pathname }) => {
-  const mastheadInfo = info[pathname] || info['/']
+const Header = () => {
+  const mastheadInfo = info[getPathname()] || info['/']
 
   return (
     <S.HeaderWrapper>
