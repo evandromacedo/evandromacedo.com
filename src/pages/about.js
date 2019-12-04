@@ -9,12 +9,12 @@ const Teste = styled.h1`
   ${props => props.theme.Header_AddInfo}
 `
 
-const IndexPage = ({ location }) => (
+const AboutPage = ({ location }) => (
   <Layout pathname={location.pathname}>
     <SEO title="Home" />
-    <Teste>Index page</Teste>
+    <Teste>About page</Teste>
     <p>{location.pathname}</p>
   </Layout>
 )
 
-export default IndexPage
+export default AboutPage
