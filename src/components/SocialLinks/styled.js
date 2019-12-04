@@ -23,7 +23,9 @@ export const SocialLinksLink = styled.a`
   transition: color 0.3s;
   font-size: 2.4rem;
 
-  &:hover {
-    color: var(--accent);
+  @media (hover: hover) {
+    &:hover {
+      color: var(--accent);
+    }
   }
 `

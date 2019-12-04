@@ -24,8 +24,10 @@ export const MenuLinksSearch = styled(Link)`
     color: var(--accent);
   }
 
-  &:hover {
-    color: var(--accent);
+  @media (hover: hover) {
+    &:hover {
+      color: var(--accent);
+    }
   }
 `
 
@@ -47,7 +49,9 @@ export const MenuLinksLink = styled(Link)`
     text-decoration: underline var(--accent);
   }
 
-  &:hover {
-    color: var(--accent);
+  @media (hover: hover) {
+    &:hover {
+      color: var(--accent);
+    }
   }
 `

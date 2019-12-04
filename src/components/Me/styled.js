@@ -16,20 +16,22 @@ export const MeWrapper = styled(Link)`
     transform: translate(-10px, -30px);
   }
 
-  .meSvg:hover .glasses {
-    opacity: 1;
+  @media (hover: hover) {
+    &:hover .glasses {
+      opacity: 1;
+    }
+
+    &:hover .tongue {
+      transform: translate(7px, 9px);
+    }
   }
 
-  .meSvg:hover .tongue {
-    transform: translate(7px, 9px);
-  }
-
-  .meSvg .fill {
+  & .fill {
     fill: var(--text);
     transition: all 0.4s;
   }
 
-  .meSvg .stroke {
+  & .stroke {
     stroke: var(--text);
     transition: all 0.4s;
   }

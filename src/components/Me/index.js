@@ -4,7 +4,7 @@ import * as S from './styled'
 
 const Me = () => (
   <S.MeWrapper to="/" className="me">
-    <svg className="meSvg" width={181} height={256}>
+    <svg width={181} height={256}>
       <defs>
         <path id="prefix__a" d="M0 0h47v47H0z" />
         <path
