@@ -63,6 +63,8 @@ const theme = {
 
   // Breakpoints
   large: '1170px',
+  socialLinks: '960px',
+  header: '848px',
 }
 
 export default theme
