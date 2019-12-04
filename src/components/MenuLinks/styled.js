@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 export const MenuLinksWrapper = styled.nav`
   display: grid;
+  grid-column: 1 / -1;
   align-items: center;
   justify-content: center;
   padding: 0.8rem 0;
@@ -18,6 +19,10 @@ export const MenuLinksSearch = styled(Link)`
   transform: translateY(-50%);
   color: var(--text);
   transition: color 0.3s;
+
+  &.active {
+    color: var(--accent);
+  }
 
   &:hover {
     color: var(--accent);
