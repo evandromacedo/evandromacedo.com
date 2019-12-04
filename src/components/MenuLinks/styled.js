@@ -11,11 +11,17 @@ export const MenuLinksWrapper = styled.nav`
   border-bottom: 2px solid var(--accent);
 `
 
-export const MenuLinksSearch = styled.span`
+export const MenuLinksSearch = styled(Link)`
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  color: var(--text);
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--accent);
+  }
 `
 
 export const MenuLinksList = styled.ul`

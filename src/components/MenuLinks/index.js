@@ -1,4 +1,5 @@
 import React from 'react'
+import { SearchAlt2 as Search } from 'styled-icons/boxicons-regular/SearchAlt2'
 
 import links from './content'
 
@@ -15,6 +16,9 @@ const MenuLinks = () => (
         </S.MenuLinksItem>
       ))}
     </S.MenuLinksList>
+    <S.MenuLinksSearch to="/search" title="Search">
+      <Search size="3.2rem" title="Search" />
+    </S.MenuLinksSearch>
   </S.MenuLinksWrapper>
 )
 
