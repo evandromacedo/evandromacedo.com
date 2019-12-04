@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Lightbulb } from 'styled-icons/fa-regular/Lightbulb'
 
@@ -25,4 +25,4 @@ const ThemeLightbulb = () => {
   )
 }
 
-export default memo(ThemeLightbulb)
+export default ThemeLightbulb
