@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import mediaQuery from '../../styles/mediaQuery'
 
 export const SocialLinksWrapper = styled.nav``
 
@@ -9,6 +10,10 @@ export const SocialLinksList = styled.ul`
   grid-auto-columns: 3.2rem;
   align-items: center;
   list-style: none;
+
+  ${mediaQuery.lessThan('socialLinks')`
+    grid-auto-flow: row;
+  `}
 `
 
 export const SocialLinksItem = styled.li``
