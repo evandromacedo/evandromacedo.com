@@ -6,7 +6,7 @@ import getPathname from '../../utils/getPathname'
 import * as S from './styled'
 
 const MenuLinks = () => (
-  <S.MenuLinksWrapper>
+  <S.MenuLinksWrapper className="menu-links">
     <S.MenuLinksList>
       <S.MenuLinksItem>
         <S.MenuLinksLink className={isBlogActive() ? 'active' : ''} to={'/'}>

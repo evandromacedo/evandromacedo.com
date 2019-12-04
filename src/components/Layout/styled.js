@@ -4,12 +4,17 @@ import GaramondRegular from '../../../static/font/Garamond-Regular.ttf'
 import GaramondItalic from '../../../static/font/Garamond-Italic.ttf'
 import GaramondBold from '../../../static/font/Garamond-Bold.ttf'
 import GaramondBoldItalic from '../../../static/font/Garamond-BoldItalic.ttf'
+import mediaQuery from '../../styles/mediaQuery'
 
 export const LayoutWrapper = styled.section`
   min-height: 100vh;
   max-width: ${theme.large};
   margin: 0 auto;
   padding: 1.6rem 1.6rem 1.2rem 1.6rem;
+
+  ${mediaQuery.lessThan('header')`
+    padding: 0.8rem 1.6rem 1.2rem 1.6rem;
+  `}
 
   /* Font-faces */
   @font-face {

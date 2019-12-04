@@ -5,6 +5,7 @@ const mediaQuery = generateMedia({
   large: theme.large,
   socialLinks: theme.socialLinks,
   header: theme.header,
+  mastheadInfo: theme.mastheadInfo,
 })
 
 export default mediaQuery

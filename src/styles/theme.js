@@ -61,10 +61,29 @@ const theme = {
     text-decoration: underline;
   `,
 
+  // Reset Button Styles
+  ResetButtonStyles: `
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    text-align: inherit;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+  `,
+
   // Breakpoints
   large: '1170px',
   socialLinks: '960px',
   header: '848px',
+  mastheadInfo: '416px',
 }
 
 export default theme
