@@ -6,36 +6,18 @@ import SocialLinks from '../SocialLinks'
 import ThemeBulb from '../ThemeBulb'
 import MenuLinks from '../MenuLinks'
 
+import * as S from './styled'
+
 const Header = () => (
-  <div
-    style={{
-      // maxWidth: '1138px',
-      // margin: '0 auto',
-      // padding: '16px',
-      textAlign: 'center',
-      display: 'grid',
-      // gridAutoFlow: 'column',
-      gridTemplateColumns: 'auto 1fr auto',
-      alignItems: 'end',
-      gridGap: '1.6rem',
-    }}
-  >
+  <S.HeaderWrapper>
     <Me />
     <Masthead />
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-end',
-        justifyContent: 'space-between',
-        height: '100%',
-      }}
-    >
+    <S.HeaderLinks>
       <ThemeBulb />
       <SocialLinks />
-    </div>
+    </S.HeaderLinks>
     <MenuLinks />
-  </div>
+  </S.HeaderWrapper>
 )
 
 export default Header
