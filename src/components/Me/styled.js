@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 // This will be the TransitionLink soon
-export const MeWrapper = styled.a`
+export const MeWrapper = styled(Link)`
   .glasses,
   .tongue {
     transition: all 0.2s;
@@ -15,20 +16,20 @@ export const MeWrapper = styled.a`
     transform: translate(-10px, -30px);
   }
 
-  .me:hover .glasses {
+  .meSvg:hover .glasses {
     opacity: 1;
   }
 
-  .me:hover .tongue {
+  .meSvg:hover .tongue {
     transform: translate(7px, 9px);
   }
 
-  .me .fill {
+  .meSvg .fill {
     fill: var(--text);
     transition: all 0.4s;
   }
 
-  .me .stroke {
+  .meSvg .stroke {
     stroke: var(--text);
     transition: all 0.4s;
   }

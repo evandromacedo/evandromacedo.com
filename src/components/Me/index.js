@@ -3,8 +3,8 @@ import React from 'react'
 import * as S from './styled'
 
 const Me = () => (
-  <S.MeWrapper href="#">
-    <svg className="me" width={181} height={256}>
+  <S.MeWrapper to="/" className="me">
+    <svg className="meSvg" width={181} height={256}>
       <defs>
         <path id="prefix__a" d="M0 0h47v47H0z" />
         <path
