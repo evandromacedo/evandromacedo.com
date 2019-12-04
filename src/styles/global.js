@@ -1,8 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import GaramondRegular from '../../static/font/Garamond-Regular.ttf'
-import GaramondItalic from '../../static/font/Garamond-Italic.ttf'
-import GaramondBold from '../../static/font/Garamond-Bold.ttf'
-import GaramondBoldItalic from '../../static/font/Garamond-BoldItalic.ttf'
 
 const GlobalStyles = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -64,35 +60,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   /* End of reset styles */
-
-  /* Font-faces */
-  @font-face {
-    font-family: 'Garamond';
-    src: url(${GaramondRegular}) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Garamond';
-    src: url(${GaramondItalic}) format('truetype');
-    font-weight: normal;
-    font-style: italic;
-  }
-
-  @font-face {
-    font-family: 'Garamond';
-    src: url(${GaramondBold}) format('truetype');
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Garamond';
-    src: url(${GaramondBoldItalic}) format('truetype');
-    font-weight: bold;
-    font-style: italic;
-  }
 
   html {
     font-size: 10px;
