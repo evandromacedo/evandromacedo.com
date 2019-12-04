@@ -60,6 +60,9 @@ const theme = {
     font-style: italic;
     text-decoration: underline;
   `,
+
+  // Breakpoints
+  large: '1170px',
 }
 
 export default theme
