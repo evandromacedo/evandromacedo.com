@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 
-import { Lightbulb as LightBulb } from 'styled-icons/fa-regular/Lightbulb'
-import { Lightbulb as DarkBulb } from 'styled-icons/fa-solid/Lightbulb'
+import { Lightbulb } from 'styled-icons/fa-regular/Lightbulb'
 
 import * as S from './styled'
 
@@ -15,17 +14,15 @@ const ThemeLightbulb = () => {
     window.__onThemeChange = () => setTheme(window.__theme)
   }, [])
 
-  const Icon = isLightMode ? LightBulb : DarkBulb
+  const setPreferredTheme = () => {
+    window.__setPreferredTheme(isLightMode ? 'dark' : 'light')
+  }
 
   return (
-    <S.ThemeBulbWrapper
-      onClick={() => {
-        window.__setPreferredTheme(isLightMode ? 'dark' : 'light')
-      }}
-    >
-      <Icon size="2.4rem" title="Change Theme" />
+    <S.ThemeBulbWrapper onClick={setPreferredTheme}>
+      <Lightbulb size="2.4rem" title="Change Theme" />
     </S.ThemeBulbWrapper>
   )
 }
 
-export default ThemeLightbulb
+export default memo(ThemeLightbulb)
