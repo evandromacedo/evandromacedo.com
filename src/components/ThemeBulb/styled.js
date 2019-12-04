@@ -6,4 +6,5 @@ export const ThemeBulbWrapper = styled.div`
   display: grid;
   align-items: center;
   justify-items: center;
+  color: var(--accent);
 `
