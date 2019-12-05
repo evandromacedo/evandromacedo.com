@@ -13,7 +13,7 @@ export const LayoutWrapper = styled.section`
   padding: 1.6rem 1.6rem 1.2rem 1.6rem;
 
   ${mediaQuery.lessThan('header')`
-    padding: 0.8rem 1.6rem 1.2rem 1.6rem;
+    padding: 0 1.6rem 1.2rem 1.6rem;
   `}
 
   /* Font-faces */
