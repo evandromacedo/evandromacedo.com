@@ -1,22 +1,51 @@
 import styled from 'styled-components'
+import mediaQuery from '../../styles/mediaQuery'
+import { ThemeBulbWrapper } from '../ThemeBulb/styled'
 import { Link } from 'gatsby'
 
 export const MenuLinksWrapper = styled.nav`
   display: grid;
-  grid-column: 1 / -1;
   align-items: center;
   justify-content: center;
   padding: 0.8rem 0;
   position: relative;
   border-top: 2px solid var(--accent);
   border-bottom: 2px solid var(--accent);
+
+  ${mediaQuery.lessThan('header')`
+    border-top: none;
+    justify-content: start;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+    background-color: var(--background);
+    transition: transform 0.3s, background 0.4s;
+    transform: translateY(-7.5rem);
+
+    ${props => props.isOpen && `transform: translateY(4.6rem);`}
+  `}
+`
+
+export const MenuLinksRight = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  ${mediaQuery.greaterThan('header')`
+    ${ThemeBulbWrapper} {
+      display: none;
+    }
+  `}
 `
 
 export const MenuLinksSearch = styled(Link)`
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
   color: var(--text);
   transition: color 0.3s;
 
@@ -35,6 +64,10 @@ export const MenuLinksList = styled.ul`
   display: grid;
   grid-auto-flow: column;
   grid-gap: 1.6rem;
+
+  ${mediaQuery.lessThan('header')`
+    grid-auto-flow: row;
+  `}
 `
 
 export const MenuLinksItem = styled.li``
