@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export const ThemeBulbWrapper = styled.div`
-  cursor: pointer;
-  width: 3.2rem;
+export const ThemeBulbWrapper = styled.button`
+  ${props => props.theme.ResetButtonStyles}
+  outline: none;
   display: grid;
   align-items: center;
   justify-items: center;

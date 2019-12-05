@@ -11,7 +11,9 @@ const ThemeLightbulb = () => {
 
   useEffect(() => {
     setTheme(window.__theme)
-    window.__onThemeChange = () => setTheme(window.__theme)
+    window.__onThemeChangeCallbacks.push(() => {
+      setTheme(window.__theme)
+    })
   }, [])
 
   const setPreferredTheme = () => {
@@ -19,8 +21,8 @@ const ThemeLightbulb = () => {
   }
 
   return (
-    <S.ThemeBulbWrapper onClick={setPreferredTheme}>
-      <Lightbulb size="2.4rem" title="Change Theme" />
+    <S.ThemeBulbWrapper onClick={setPreferredTheme} title="Change Theme">
+      <Lightbulb size="2.4rem" />
     </S.ThemeBulbWrapper>
   )
 }
