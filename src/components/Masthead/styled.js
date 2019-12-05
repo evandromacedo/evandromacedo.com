@@ -32,24 +32,25 @@ export const MastheadAddInfo = styled.h3`
   color: var(--accent);
 `
 
+export const MastheadAddInfoMobile = styled.span`
+  font-size: 1.6rem;
+  color: var(--accent);
+`
+
 export const MastheadMobile = styled(Link)`
   display: none;
   font-size: 3.2rem;
   text-transform: lowercase;
   text-decoration: none;
   color: var(--text);
-
-  .addInfo {
-    font-size: 1.6rem;
-    color: var(--accent);
-  }
+  transition: color 0.4s;
 
   ${mediaQuery.lessThan('header')`
     display: inline;
   `}
 
   ${mediaQuery.lessThan('mastheadInfo')`
-    .addInfo {
+    ${MastheadAddInfoMobile} {
       display: none;
     }
   `}

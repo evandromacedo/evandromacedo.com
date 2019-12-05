@@ -14,7 +14,7 @@ const Masthead = ({ addInfo }) => (
 
     {/* Mobile Masthead */}
     <S.MastheadMobile to="/">
-      Evandro Macedo<span className="addInfo">'s {addInfo}</span>
+      Evandro Macedo<S.MastheadAddInfoMobile>'s {addInfo}</S.MastheadAddInfoMobile>
     </S.MastheadMobile>
   </S.MastheadWrapper>
 )
