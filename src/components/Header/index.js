@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import info from './content'
 import getPathname from '../../utils/getPathname'
@@ -8,24 +8,34 @@ import SocialLinks from '../SocialLinks'
 import ThemeBulb from '../ThemeBulb'
 import MenuLinks from '../MenuLinks'
 import MenuIcon from './MenuIcon'
+import CloseIcon from './CloseIcon'
 
 import * as S from './styled'
 
 const Header = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const toggleMenu = () => setMenuIsOpen(!menuIsOpen)
+  const closeMenu = () => setMenuIsOpen(false)
   const mastheadInfo = info[getPathname()] || info['/']
 
   return (
     <S.HeaderWrapper>
-      <Me />
-      <Masthead addInfo={mastheadInfo} />
-      <S.HeaderHamburguerWrapper title="Open Menu">
-        <MenuIcon />
-      </S.HeaderHamburguerWrapper>
-      <S.HeaderLinks>
-        <ThemeBulb />
-        <SocialLinks />
-      </S.HeaderLinks>
-      <MenuLinks />
+      <S.HeaderPresentation>
+        <Me />
+        <Masthead addInfo={mastheadInfo} />
+        <S.HeaderLinks>
+          <ThemeBulb />
+          <SocialLinks />
+        </S.HeaderLinks>
+
+        {/* Mobile only - toggle MenuLinks */}
+        <S.HeaderToggleMenu title="Open Menu" onClick={toggleMenu}>
+          {!menuIsOpen && <MenuIcon />}
+          {menuIsOpen && <CloseIcon />}
+        </S.HeaderToggleMenu>
+      </S.HeaderPresentation>
+
+      <MenuLinks isOpen={menuIsOpen} closeMenu={closeMenu} />
     </S.HeaderWrapper>
   )
 }
