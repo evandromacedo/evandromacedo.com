@@ -63,6 +63,7 @@ const theme = {
 
   // Reset Button Styles
   ResetButtonStyles: `
+    cursor: pointer;
     border: none;
     border-radius: 0;
     margin: 0;
