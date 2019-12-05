@@ -1,8 +1,12 @@
 import styled from 'styled-components'
+import mediaQuery from '../../styles/mediaQuery'
 import { Link } from 'gatsby'
 
-// This will be the TransitionLink soon
 export const MeWrapper = styled(Link)`
+  ${mediaQuery.lessThan('header')`
+    display: none;
+  `}
+
   .glasses,
   .tongue {
     transition: all 0.2s;
