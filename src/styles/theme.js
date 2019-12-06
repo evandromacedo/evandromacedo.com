@@ -58,7 +58,6 @@ const theme = {
   General_Tag: `
     font-size: 1.6rem;
     font-style: italic;
-    text-decoration: underline;
   `,
 
   // Reset Button Styles
