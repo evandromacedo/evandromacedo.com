@@ -10,7 +10,14 @@ const PostList = ({ posts, rows }) => {
   const postGrid = Array.from({ length: rows }).map(() => [])
 
   posts.forEach((post, index) => {
-    postGrid[index % rows].push(post)
+    postGrid[index % rows].push({
+      title: post.node.frontmatter.title,
+      description: post.node.frontmatter.description,
+      date: post.node.frontmatter.date,
+      timeToRead: post.node.timeToRead,
+      tags: post.node.frontmatter.tags,
+      slug: post.node.fields.slug,
+    })
   })
 
   return (
@@ -35,16 +42,7 @@ const PostList = ({ posts, rows }) => {
 }
 
 PostList.propTypes = {
-  posts: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-      timeToRead: PropTypes.number.isRequired,
-      tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-      slug: PropTypes.string.isRequired,
-    })
-  ),
+  posts: PropTypes.array.isRequired,
   rows: PropTypes.number.isRequired,
 }
 
