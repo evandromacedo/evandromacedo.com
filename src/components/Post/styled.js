@@ -3,7 +3,7 @@ import mediaQuery from '../../styles/mediaQuery'
 import { Link } from 'gatsby'
 
 export const PostWrapper = styled.article`
-  max-width: 106rem;
+  max-width: 97.6rem;
   padding: 0 1.6rem;
   margin: 0 auto;
 
