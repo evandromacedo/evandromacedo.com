@@ -9,6 +9,8 @@ export const PostItemTitle = styled.h1`
 `
 
 export const PostItemLink = styled(Link)`
+  display: block;
+  width: 100%;
   color: var(--texts);
   text-decoration: none;
 
@@ -27,6 +29,7 @@ export const PostItemWrapper = styled.article`
 
 export const PostItemDateAndReadTime = styled.small`
   ${props => props.theme.Home_PostDateAndReadTime}
+  display: block;
   margin-bottom: 1.2rem;
 `
 

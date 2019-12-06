@@ -4,23 +4,24 @@ import PropTypes from 'prop-types'
 import * as S from './styled'
 
 const PostItem = ({ title, description, date, timeToRead, tags, slug }) => (
-  <S.PostItemLink to={slug}>
-    <S.PostItemWrapper>
+  <S.PostItemWrapper>
+    <S.PostItemLink to={slug}>
       <S.PostItemTitle>{title}</S.PostItemTitle>
       <S.PostItemDateAndReadTime>
         {date} • ☕️ {timeToRead} min read
       </S.PostItemDateAndReadTime>
       <S.PostItemDescription>{description}</S.PostItemDescription>
-      <S.PostItemTags>
-        {tags.map((tag, i) => (
-          <Fragment key={i}>
-            <S.PostItemTag>{tag}</S.PostItemTag>
-            {i !== tags.length - 1 && ', '}
-          </Fragment>
-        ))}
-      </S.PostItemTags>
-    </S.PostItemWrapper>
-  </S.PostItemLink>
+    </S.PostItemLink>
+
+    <S.PostItemTags>
+      {tags.map((tag, i) => (
+        <Fragment key={i}>
+          <S.PostItemTag to={`/tags/${tag}`}>{tag}</S.PostItemTag>
+          {i !== tags.length - 1 && ', '}
+        </Fragment>
+      ))}
+    </S.PostItemTags>
+  </S.PostItemWrapper>
 )
 
 PostItem.propTypes = {
