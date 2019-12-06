@@ -49,7 +49,10 @@ const theme = {
     font-weight: bold;
   `,
   General_Description: `
-    font-size: 2.8rem;
+    font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.1rem;
+    line-height: 3.2rem;
+    font-style: italic;
   `,
   General_Paragraph: `
     font-size: 2.4rem;
