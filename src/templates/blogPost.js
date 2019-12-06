@@ -6,7 +6,7 @@ import SEO from '../components/SEO'
 
 const BlogPost = ({ data: { markdownRemark: post } }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title={post.frontmatter.title} />
 
     <h1>{post.frontmatter.title}</h1>
     <div dangerouslySetInnerHTML={{ __html: post.html }} />
