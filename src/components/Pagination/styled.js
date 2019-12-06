@@ -10,6 +10,9 @@ export const PaginationWrapper = styled.section`
   border-top: 2px solid var(--accent);
   padding-top: 0.8rem;
   color: var(--text);
+
+  ${props => props.isOnePage && `justify-content: center;`}
+
   ${props => props.theme.Home_PostDescription}
 
   ${mediaQuery.lessThan('paginationText')`

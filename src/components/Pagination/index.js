@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import * as S from './styled'
 
 const Pagination = ({ isFirst, isLast, currentPage, numPages, prevPage, nextPage }) => (
-  <S.PaginationWrapper>
+  <S.PaginationWrapper isOnePage={numPages === 1}>
     {!isFirst && <S.PaginationLink to={prevPage}>← Previous page</S.PaginationLink>}
     <p>
       {currentPage} of {numPages}
