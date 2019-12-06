@@ -2,15 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import withSizes from 'react-sizes'
 
+import theme from '../../styles/theme'
 import PostItem from '../PostItem'
 
 import * as S from './styled'
 
-const PostList = ({ posts, rows }) => {
-  const postGrid = Array.from({ length: rows }).map(() => [])
+const PostList = ({ posts, columns }) => {
+  const postGrid = Array.from({ length: columns }).map(() => [])
 
   posts.forEach((post, index) => {
-    postGrid[index % rows].push({
+    postGrid[index % columns].push({
       title: post.node.frontmatter.title,
       description: post.node.frontmatter.description,
       date: post.node.frontmatter.date,
@@ -43,21 +44,25 @@ const PostList = ({ posts, rows }) => {
 
 PostList.propTypes = {
   posts: PropTypes.array.isRequired,
-  rows: PropTypes.number.isRequired,
+  columns: PropTypes.number.isRequired,
 }
 
-const mapSizesToProps = ({ width }) => {
-  let rows = 3
+const columnsCount = ({ width }) => {
+  let columns = 3
 
-  if (width < 1000) {
-    rows = 2
+  if (width <= parseInt(theme.homePosts2Columns)) {
+    columns = 2
   }
 
-  if (width < 800) {
-    rows = 1
+  if (width <= parseInt(theme.homePosts1Column)) {
+    columns = 1
   }
 
-  return { rows }
+  return columns
 }
+
+const mapSizesToProps = sizes => ({
+  columns: columnsCount(sizes),
+})
 
 export default withSizes(mapSizesToProps)(PostList)

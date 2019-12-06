@@ -85,6 +85,8 @@ const theme = {
   header: '848px',
   mastheadInfo: '416px',
   paginationText: '360px',
+  homePosts2Columns: '848px',
+  homePosts1Column: '600px',
 }
 
 export default theme

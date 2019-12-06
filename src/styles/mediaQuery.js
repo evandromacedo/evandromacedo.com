@@ -7,6 +7,8 @@ const mediaQuery = generateMedia({
   header: theme.header,
   mastheadInfo: theme.mastheadInfo,
   paginationText: theme.paginationText,
+  homePosts2Columns: theme.homePosts2Columns,
+  homePosts1Column: theme.homePosts1Column,
 })
 
 export default mediaQuery
