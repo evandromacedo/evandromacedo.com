@@ -13,23 +13,22 @@ const BlogList = ({ data, pageContext }) => {
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? '/' : `page/${currentPage - 1}`
   const nextPage = `page/${currentPage + 1}`
+  const footer = (
+    <Pagination
+      isFirst={isFirst}
+      isLast={isLast}
+      currentPage={currentPage}
+      numPages={numPages}
+      prevPage={prevPage}
+      nextPage={nextPage}
+    />
+  )
 
   return (
-    <Layout>
+    <Layout footer={footer}>
       <SEO title="Home" />
 
-      <div style={{ paddingTop: '50px' }}>
-        <PostList posts={posts} />
-      </div>
-
-      <Pagination
-        isFirst={isFirst}
-        isLast={isLast}
-        currentPage={currentPage}
-        numPages={numPages}
-        prevPage={prevPage}
-        nextPage={nextPage}
-      />
+      <PostList posts={posts} />
     </Layout>
   )
 }
