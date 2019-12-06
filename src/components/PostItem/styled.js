@@ -19,7 +19,7 @@ export const PostItemLink = styled(Link)`
   }
 `
 
-export const PostItemWrapper = styled.section`
+export const PostItemWrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
