@@ -5,9 +5,39 @@ date: 2019-12-08 03:56:23
 tags: [dev, javascript, react]
 ---
 
-![Desert](/desert.jpg)
+## This is `an h2`
 
-## This is an h2
+```jsx
+const Header = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const toggleMenu = () => setMenuIsOpen(!menuIsOpen)
+  const closeMenu = () => setMenuIsOpen(false)
+  const mastheadInfo = info[getPathname()] || info['/']
+
+  return (
+    <S.HeaderWrapper>
+      <S.HeaderPresentation>
+        <Me />
+        <Masthead addInfo={mastheadInfo} />
+        <S.HeaderLinks>
+          <ThemeBulb />
+          <SocialLinks />
+        </S.HeaderLinks>
+
+        {/* Mobile only - toggle MenuLinks */}
+        <S.HeaderToggleMenu title="Open Menu" onClick={toggleMenu}>
+          {!menuIsOpen && <MenuIcon />}
+          {menuIsOpen && <CloseIcon />}
+        </S.HeaderToggleMenu>
+      </S.HeaderPresentation>
+
+      <MenuLinks isOpen={menuIsOpen} closeMenu={closeMenu} />
+    </S.HeaderWrapper>
+  )
+}
+```
+
+![Desert](/desert.jpg)
 
 ### This is an h3
 

@@ -107,13 +107,14 @@ export const PostMainContent = styled.section`
 
   blockquote {
     border-left: 0.3rem solid var(--accent);
-    padding: 0 1.875rem;
-    margin: 3.125rem auto;
+    padding: 0.8rem 2.4rem;
+    margin: 3.2rem auto;
 
     p {
       font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       font-size: 2.1rem;
       font-style: italic;
+      margin: 0;
       opacity: 0.6;
     }
   }
@@ -145,15 +146,25 @@ export const PostMainContent = styled.section`
     }
   }
 
-  .gatsby-highlight {
-    padding: 0 1.6rem 1.6rem;
-  }
-
   a {
     color: var(--accent);
 
     &:hover {
       opacity: 0.6;
     }
+  }
+
+  pre {
+    margin: 0;
+    padding: 1.6rem 2rem;
+
+    code {
+      font-size: 1.6rem;
+    }
+  }
+
+  .gatsby-highlight {
+    margin-bottom: 2.4rem;
+    padding: 0;
   }
 `
