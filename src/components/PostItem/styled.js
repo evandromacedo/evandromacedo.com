@@ -11,7 +11,7 @@ export const PostItemTitle = styled.h1`
 export const PostItemLink = styled(Link)`
   display: block;
   width: 100%;
-  color: var(--texts);
+  color: var(--text);
   text-decoration: none;
 
   @media (hover: hover) {

@@ -84,6 +84,7 @@ const theme = {
   socialLinks: '960px',
   header: '848px',
   mastheadInfo: '416px',
+  paginationText: '360px',
 }
 
 export default theme
