@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
+import coffeeCount from '../../utils/coffeeCount'
+
 import * as S from './styled'
 
 const PostItem = ({ title, description, date, timeToRead, tags, slug }) => (
@@ -8,7 +10,7 @@ const PostItem = ({ title, description, date, timeToRead, tags, slug }) => (
     <S.PostItemLink to={slug}>
       <S.PostItemTitle>{title}</S.PostItemTitle>
       <S.PostItemDateAndReadTime>
-        {date} • ☕️ {timeToRead} min read
+        {date} • {coffeeCount(timeToRead)} {timeToRead} min read
       </S.PostItemDateAndReadTime>
       <S.PostItemDescription>{description}</S.PostItemDescription>
     </S.PostItemLink>
