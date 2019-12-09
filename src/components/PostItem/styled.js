@@ -13,6 +13,7 @@ export const PostItemLink = styled(Link)`
   width: 100%;
   color: var(--text);
   text-decoration: none;
+  transition: color 0.3s;
 
   @media (hover: hover) {
     &:hover ${PostItemTitle} {
