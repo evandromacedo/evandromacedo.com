@@ -7,7 +7,7 @@ tags: [dev, javascript, react]
 
 ## This is `an h2`
 
-```jsx
+```jsx{numberLines: true}
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const toggleMenu = () => setMenuIsOpen(!menuIsOpen)
@@ -36,6 +36,14 @@ const Header = () => {
   )
 }
 ```
+
+Isso é um texto que vai ter `Snackbar(teste)` inline ta ligado.
+
+```
+E isso aqui é um bloco de código
+```
+
+> Isso aqui é um código `const letter = 'a'` só que em blockquote
 
 ![Desert](/desert.jpg)
 

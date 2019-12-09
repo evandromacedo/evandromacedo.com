@@ -154,17 +154,49 @@ export const PostMainContent = styled.section`
     }
   }
 
+  /* PrismJS */
+  code.language-text {
+    color: inherit;
+    padding: 0.2em 0.4em;
+    font-size: 75%;
+    border-radius: 3px;
+
+    body.light & {
+      background-color: #e0e0e0;
+    }
+
+    body.dark & {
+      background-color: #3c4250;
+    }
+  }
+
   pre {
     margin: 0;
-    padding: 1.6rem 2rem;
+    padding: 1.4rem 1.6rem;
+    font-size: 1.6rem;
+    border-radius: 4px;
 
-    code {
-      font-size: 1.6rem;
+    body.dark & {
+      border: 2px solid #3c4250;
     }
+  }
+
+  pre.language-text > code.language-text {
+    font-size: 1.6rem;
+    background-color: transparent;
   }
 
   .gatsby-highlight {
     margin-bottom: 2.4rem;
-    padding: 0;
+  }
+
+  .gatsby-highlight .line-numbers {
+    padding-left: 4.8rem;
+  }
+
+  .gatsby-highlight .line-numbers-rows {
+    padding-top: 1.6rem;
+    padding-left: 1.6rem;
+    border-right: none;
   }
 `
