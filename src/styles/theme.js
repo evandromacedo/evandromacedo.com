@@ -84,6 +84,7 @@ const theme = {
 
   // Breakpoints
   large: '1170px',
+  small: '480px',
   socialLinks: '960px',
   header: '848px',
   mastheadInfo: '416px',

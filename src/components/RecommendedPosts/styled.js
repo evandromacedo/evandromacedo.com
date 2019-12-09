@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import mediaQuery from '../../styles/mediaQuery'
 
-export const PaginationWrapper = styled.nav`
+export const RecommendedPostsWrapper = styled.nav`
   display: grid;
   grid-gap: 1.6rem;
   grid-auto-flow: column;
@@ -11,16 +11,37 @@ export const PaginationWrapper = styled.nav`
   padding-top: 0.8rem;
   color: var(--text);
 
-  ${props => props.isOnePage && `justify-content: center;`}
-
   ${props => props.theme.Home_PostDescription}
 
-  ${mediaQuery.lessThan('paginationText')`
-    ${props => props.theme.Home_PostDateAndReadTime}
+  ${props =>
+    !props.hasPrevious &&
+    `
+    &:before {
+      content: ''
+    }
+  `}
+
+  ${props =>
+    !props.hasNext &&
+    `
+    &:after {
+      content: ''
+    }
+  `}
+
+  ${mediaQuery.lessThan('small')`
+    grid-auto-flow: row;
+    justify-content: center;
+    justify-items: center;
+
+    &:after,
+    &:before {
+      content: none;
+    }
   `}
 `
 
-export const PaginationLink = styled(Link)`
+export const RecommendedPostsLink = styled(Link)`
   color: var(--text);
   text-decoration: none;
   transition: color 0.3s;

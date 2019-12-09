@@ -4,14 +4,18 @@ import { graphql } from 'gatsby'
 import coffeeCount from '../utils/coffeeCount'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
+import RecommendedPosts from '../components/RecommendedPosts'
 
 import * as S from '../components/Post/styled'
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pageContext }) => {
   const post = data.markdownRemark
+  const footer = (
+    <RecommendedPosts next={pageContext.nextPost} previous={pageContext.previousPost} />
+  )
 
   return (
-    <Layout>
+    <Layout footer={footer}>
       <SEO title={post.frontmatter.title} />
 
       <S.PostWrapper>

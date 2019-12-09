@@ -3,6 +3,7 @@ import theme from './theme'
 
 const mediaQuery = generateMedia({
   large: theme.large,
+  small: theme.small,
   socialLinks: theme.socialLinks,
   header: theme.header,
   mastheadInfo: theme.mastheadInfo,
