@@ -1,3 +1,6 @@
+require('dotenv').config()
+const queries = require('./src/utils/algoliaQueries')
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -51,6 +54,17 @@ module.exports = {
           `gatsby-remark-lazy-load`,
           `gatsby-remark-prismjs`,
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia-search`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 10000,
+        enablePartialUpdates: true,
       },
     },
     {

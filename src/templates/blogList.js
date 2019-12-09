@@ -43,10 +43,10 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
+            title
             date(locale: "en-us", formatString: "MMMM DD, YYYY")
             description
             tags
-            title
           }
           fields {
             slug
