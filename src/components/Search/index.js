@@ -8,6 +8,8 @@ import {
   connectStateResults,
 } from 'react-instantsearch-dom'
 
+import Hit from './Hit'
+
 import * as S from './styled'
 
 const algolia = {
@@ -18,20 +20,24 @@ const algolia = {
 
 const searchClient = algoliasearch(algolia.appId, algolia.searchOnlyApiKey)
 
-const Content = connectStateResults(({ searchState, searchResults }) => {
+const SearchResults = connectStateResults(({ searchState, searchResults }) => {
   if (searchResults && searchResults.nbHits) {
     if (searchState && searchState.query) {
       return (
         <>
           <Stats />
-          <Hits />
+          <Hits hitComponent={Hit} />
         </>
       )
     }
 
     return null
   } else {
-    return <div>No results has been found for {searchState.query}</div>
+    return (
+      <S.SearchNoResults>
+        <p>No results have been found for "{searchState.query}" 😕</p>
+      </S.SearchNoResults>
+    )
   }
 })
 
@@ -39,7 +45,7 @@ const Search = () => (
   <S.SearchWrapper>
     <InstantSearch searchClient={searchClient} indexName={algolia.indexName}>
       <SearchBox autoFocus translations={{ placeholder: 'Search...' }} />
-      <Content />
+      <SearchResults />
     </InstantSearch>
   </S.SearchWrapper>
 )

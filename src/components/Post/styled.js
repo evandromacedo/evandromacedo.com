@@ -100,7 +100,7 @@ export const PostMainContent = styled.section`
   }
 
   hr {
-    border: 1px solid #e1e1e1;
+    border: 1px solid var(--divider);
     margin-top: 6.8rem;
     margin-bottom: 1.6rem;
   }

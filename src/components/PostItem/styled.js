@@ -36,7 +36,7 @@ export const PostItemDateAndReadTime = styled.small`
 
 export const PostItemDescription = styled.p`
   ${props => props.theme.Home_PostDescription}
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
 `
 
 export const PostItemTags = styled.small`

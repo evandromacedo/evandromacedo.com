@@ -68,11 +68,13 @@ const GlobalStyles = createGlobalStyle`
   body.light {
     --background: #F6F6F6;
     --text: #222222;
+    --divider: #e1e1e1;
   }
 
   body.dark {
     --background: #282C35;
     --text: #F6F6F6;
+    --divider: #54575e;
   }
 
   body {
