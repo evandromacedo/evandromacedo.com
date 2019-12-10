@@ -9,11 +9,10 @@ const Teste = styled.h1`
   ${props => props.theme.Header_AddInfo}
 `
 
-const AboutPage = ({ location }) => (
-  <Layout pathname={location.pathname}>
+const AboutPage = () => (
+  <Layout>
     <SEO title="Home" />
     <Teste>About page</Teste>
-    <p>{location.pathname}</p>
   </Layout>
 )
 
