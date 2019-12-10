@@ -33,11 +33,15 @@ const SearchResults = connectStateResults(({ searchState, searchResults }) => {
 
     return null
   } else {
-    return (
-      <S.SearchNoResults>
-        <p>No results have been found for "{searchState.query}" 😕</p>
-      </S.SearchNoResults>
-    )
+    if (searchState.query) {
+      return (
+        <S.SearchNoResults>
+          <p>No results have been found for "{searchState.query}" 😕</p>
+        </S.SearchNoResults>
+      )
+    }
+
+    return null
   }
 })
 
