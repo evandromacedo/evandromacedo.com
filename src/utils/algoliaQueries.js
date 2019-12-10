@@ -16,7 +16,6 @@ const postsQuery = `{
           tags
         }
         timeToRead
-        excerpt(pruneLength: 5000)
       }
     }
   }
@@ -36,9 +35,6 @@ const queries = [
     query: postsQuery,
     transformer: ({ data }) => flatten(data.posts.edges),
     indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-    settings: {
-      attributesToSnippet: ['excerpt:20'],
-    },
   },
 ]
 
