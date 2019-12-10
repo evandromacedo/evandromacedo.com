@@ -1,4 +1,5 @@
 const path = require('path')
+const _ = require('lodash')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // To add the slug field to each post
@@ -27,7 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
     query {
-      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+      postsRemark: allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             fields {
@@ -52,9 +53,14 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
     }
   `).then(result => {
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.postsRemark.edges
 
     posts.forEach(({ node, next, previous }) => {
       createPage({
@@ -80,6 +86,18 @@ exports.createPages = ({ graphql, actions }) => {
           skip: index * postsPerPage,
           numPages,
           currentPage: index + 1,
+        },
+      })
+    })
+
+    const tags = result.data.tagsGroup.group
+
+    tags.forEach(tag => {
+      createPage({
+        path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+        component: path.resolve('src/templates/tags.js'),
+        context: {
+          tag: tag.fieldValue,
         },
       })
     })
