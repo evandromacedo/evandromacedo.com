@@ -95,7 +95,7 @@ exports.createPages = ({ graphql, actions }) => {
     tags.forEach(tag => {
       createPage({
         path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-        component: path.resolve('src/templates/tags.js'),
+        component: path.resolve('src/templates/tagPosts.js'),
         context: {
           tag: tag.fieldValue,
         },

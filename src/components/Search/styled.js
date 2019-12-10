@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const SearchWrapper = styled.section`
   .ais-SearchBox,
   .ais-Stats {
-    max-width: 96rem;
+    max-width: 97.6rem;
+    padding: 0 1.6rem;
     margin: 0 auto;
   }
 

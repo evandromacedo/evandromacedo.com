@@ -62,6 +62,15 @@ const theme = {
     font-size: 1.6rem;
     font-style: italic;
   `,
+  General_Link: `
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    color: var(--accent);
+
+    &:hover {
+      opacity: 0.6;
+    }
+  `,
 
   // Reset Button Styles
   ResetButtonStyles: `
