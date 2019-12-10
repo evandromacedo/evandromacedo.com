@@ -16,7 +16,11 @@ const BlogPost = ({ data, pageContext }) => {
 
   return (
     <Layout footer={footer}>
-      <SEO title={post.frontmatter.title} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        image={post.frontmatter.image}
+      />
 
       <S.PostWrapper>
         <S.PostHeader>
@@ -47,10 +51,11 @@ export const query = graphql`
   query Post($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
+        title
         date(locale: "en-us", formatString: "MMMM DD, YYYY")
         description
         tags
-        title
+        image
       }
       html
       timeToRead

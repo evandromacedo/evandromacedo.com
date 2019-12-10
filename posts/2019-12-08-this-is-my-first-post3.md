@@ -3,6 +3,7 @@ title: This is my first post
 description: And this is his description
 date: 2019-12-08 03:56:23
 tags: [dev, javascript, react]
+image: '/assets/img/desert.jpg'
 ---
 
 ## This is `an h2`
