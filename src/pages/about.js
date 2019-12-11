@@ -11,7 +11,10 @@ const Teste = styled.h1`
 
 const AboutPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO
+      title="About"
+      description="Know a little more about Evandro Macedo and this Blog"
+    />
     <Teste>About page</Teste>
   </Layout>
 )
