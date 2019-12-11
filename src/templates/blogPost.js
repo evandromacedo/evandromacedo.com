@@ -25,6 +25,7 @@ const BlogPost = ({ data, pageContext }) => {
       <S.PostWrapper>
         <S.PostHeader>
           <S.PostTitle>{post.frontmatter.title}</S.PostTitle>
+          <S.PostDescription>{post.frontmatter.description}</S.PostDescription>
           <S.PostDateAndReadTime>
             {post.frontmatter.date} • {coffeeCount(post.timeToRead)} {post.timeToRead} min
             read
@@ -37,7 +38,6 @@ const BlogPost = ({ data, pageContext }) => {
               </Fragment>
             ))}
           </S.PostTags>
-          <S.PostDescription>{post.frontmatter.description}</S.PostDescription>
         </S.PostHeader>
         <S.PostMainContent>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />

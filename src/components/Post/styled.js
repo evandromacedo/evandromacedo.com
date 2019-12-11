@@ -26,7 +26,7 @@ export const PostDateAndReadTime = styled.p`
 
 export const PostTags = styled.p`
   ${props => props.theme.General_Tag}
-  margin-bottom: 1.2rem;
+  margin-bottom: 4rem;
 `
 
 export const PostTag = styled(Link)`
@@ -43,7 +43,7 @@ export const PostTag = styled(Link)`
 
 export const PostDescription = styled.p`
   ${props => props.theme.General_Description}
-  margin-bottom: 4rem;
+  margin-bottom: 1.2rem;
 `
 
 export const PostMainContent = styled.section`
