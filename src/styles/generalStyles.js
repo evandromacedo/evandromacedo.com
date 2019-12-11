@@ -41,3 +41,9 @@ export const GeneralParagraph = styled.p`
 export const GeneralLink = styled.a`
   ${props => props.theme.General_Link}
 `
+
+export const GeneralEmphasis = styled.em`
+  font-style: italic;
+  font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2rem;
+`
