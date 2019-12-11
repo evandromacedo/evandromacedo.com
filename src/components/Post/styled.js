@@ -16,7 +16,7 @@ export const PostHeader = styled.header``
 
 export const PostTitle = styled.h1`
   ${props => props.theme.General_TitleH1}
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.6rem;
 `
 
 export const PostDateAndReadTime = styled.p`
@@ -49,16 +49,19 @@ export const PostDescription = styled.p`
 export const PostMainContent = styled.section`
   h1 {
     ${props => props.theme.General_TitleH1}
+    margin-top: 4rem;
     margin-bottom: 2.4rem;
   }
 
   h2 {
     ${props => props.theme.General_TitleH2}
+    margin-top: 4rem;
     margin-bottom: 2.4rem;
   }
 
   h3 {
     ${props => props.theme.General_TitleH3}
+    margin-top: 3.2rem;
     margin-bottom: 2.4rem;
   }
 
