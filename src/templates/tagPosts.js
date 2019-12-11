@@ -7,7 +7,7 @@ import TagPosts from '../components/TagPosts'
 
 const TagPostsTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
-  const { edges: posts, totalCount } = data.allMarkdownRemark
+  const { posts, totalCount } = data.allMarkdownRemark
 
   return (
     <Layout>
@@ -25,7 +25,7 @@ export const query = graphql`
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
-      edges {
+      posts: edges {
         node {
           frontmatter {
             title

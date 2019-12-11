@@ -7,10 +7,6 @@ export const TagPostsWrapper = styled.section`
   display: grid;
   grid-gap: 0.8rem;
   justify-items: start;
-
-  ${mediaQuery.lessThan('header')`
-    grid-gap: 0;
-  `}
 `
 
 export const TagPostsTitle = styled.h1`
