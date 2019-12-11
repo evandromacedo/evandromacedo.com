@@ -22,6 +22,7 @@ function SEO({ description, lang, meta, title, image }) {
   const metaDescription = description || site.siteMetadata.description
   const url = site.siteMetadata.siteUrl
   const ogImage = `${url}${image || '/assets/img/cover.png'}`
+  const twitterSmallImage = `${url}${image || '/assets/img/cover-small.png'}`
 
   return (
     <Helmet
@@ -53,11 +54,11 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           name: `twitter:card`,
-          content: `summary_large_image`,
+          content: `summary`,
         },
         {
           name: `twitter:image:src`,
-          content: ogImage,
+          content: twitterSmallImage,
         },
         {
           name: `twitter:creator`,
