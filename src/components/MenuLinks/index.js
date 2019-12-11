@@ -21,12 +21,12 @@ const MenuLinks = ({ isOpen, closeMenu }) => {
           </S.MenuLinksLink>
         </S.MenuLinksItem>
         <S.MenuLinksItem>
-          <S.MenuLinksLink to="/about" activeClassName="active" onClick={closeMenu}>
+          <S.MenuLinksLink to="/about/" activeClassName="active" onClick={closeMenu}>
             About
           </S.MenuLinksLink>
         </S.MenuLinksItem>
         <S.MenuLinksItem>
-          <S.MenuLinksLink to="/projects" activeClassName="active" onClick={closeMenu}>
+          <S.MenuLinksLink to="/projects/" activeClassName="active" onClick={closeMenu}>
             Projects
           </S.MenuLinksLink>
         </S.MenuLinksItem>
@@ -36,7 +36,7 @@ const MenuLinks = ({ isOpen, closeMenu }) => {
       <S.MenuLinksRight>
         <ThemeBulb />
         <S.MenuLinksSearch
-          to="/search"
+          to="/search/"
           activeClassName="active"
           onClick={closeMenu}
           title="Search"
