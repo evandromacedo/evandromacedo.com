@@ -49,6 +49,10 @@ const MenuLinks = ({ isOpen, closeMenu }) => {
 }
 
 const isBlogActive = () =>
-  !['/about', '/projects', '/search'].includes(getPathname()) ? true : false
+  !['/about', '/about/', '/projects', '/projects/', '/search', '/search/'].includes(
+    getPathname()
+  )
+    ? true
+    : false
 
 export default MenuLinks
