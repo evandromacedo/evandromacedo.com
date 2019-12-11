@@ -2,7 +2,7 @@ backend:
   name: github
   repo: evandromacedo/evandromacedo.com
   branch: master
-  site_domain: https://evandromacedo.com.netlify.com
+  site_domain: https://evandromacedo.netlify.com
 
 publish_mode: editorial_workflow
 media_folder: 'static/assets/img'

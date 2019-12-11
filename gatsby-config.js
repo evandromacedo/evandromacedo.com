@@ -4,9 +4,9 @@ const queries = require('./src/utils/algoliaQueries')
 module.exports = {
   siteMetadata: {
     title: `Evandro Macedo`,
-    description: `A blog by Evandro Macedo about Web Development focused on Front-end`,
+    description: `A blog by Evandro Macedo about Web Development focused on Front-end.`,
     author: `@evandromacedo_`,
-    siteUrl: `https://evandromacedo.com`,
+    siteUrl: `https://evandromacedo.netlify.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

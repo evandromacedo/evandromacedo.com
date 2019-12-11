@@ -13,7 +13,7 @@ const AboutPage = () => (
   <Layout>
     <SEO
       title="About"
-      description="Know a little more about Evandro Macedo and this Blog"
+      description="Know a little more about Evandro Macedo and this blog."
     />
     <Teste>About page</Teste>
   </Layout>

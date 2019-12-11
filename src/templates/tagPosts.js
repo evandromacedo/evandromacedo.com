@@ -11,7 +11,7 @@ const TagPostsTemplate = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <SEO title={`Tag: ${tag}`} description={`Posts tagged with ${tag}`} />
+      <SEO title={`Tag: ${tag}`} description={`Posts tagged with ${tag}.`} />
 
       <TagPosts tag={tag} totalCount={totalCount} posts={posts} />
     </Layout>

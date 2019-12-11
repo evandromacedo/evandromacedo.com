@@ -10,7 +10,7 @@ const TagsPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Tags" description="All tags and count of posts for each one" />
+      <SEO title="Tags" description="All tags and count of posts for each one." />
 
       <Tags tags={tags} />
     </Layout>
