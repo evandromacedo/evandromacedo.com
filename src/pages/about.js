@@ -50,7 +50,7 @@ const AboutPage = () => (
         and having an existencial crisis.
       </S.GeneralParagraph>
       <img src={MeWithBeers} alt="Me with beers" />
-      <S.GeneralH3>Skillset</S.GeneralH3>
+      <S.GeneralH2>Skillset</S.GeneralH2>
       <div
         style={{
           display: 'grid',
@@ -98,6 +98,45 @@ const AboutPage = () => (
           </S.GeneralList>
         </div>
       </div>
+
+      <S.GeneralH2>Usage:</S.GeneralH2>
+
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gridGap: '1.6rem',
+          justifyItems: 'center',
+        }}
+      >
+        <div>
+          <S.GeneralParagraph style={{ textAlign: 'center' }}>
+            <S.GeneralEmphasis>Hardware:</S.GeneralEmphasis>
+          </S.GeneralParagraph>
+          <S.GeneralList>
+            <li>An old MacBook Pro (13", Mid 2012), Intel Core i5, 8GB RAM, 240GB SSD</li>
+            <li>External monitor LG 21,5" 22MP55PQ</li>
+            <li>Magic Keyboard</li>
+            <li>Magic Mouse</li>
+          </S.GeneralList>
+        </div>
+
+        <div>
+          <S.GeneralParagraph style={{ textAlign: 'center' }}>
+            <S.GeneralEmphasis>Software:</S.GeneralEmphasis>
+          </S.GeneralParagraph>
+          <S.GeneralList>
+            <li>Visual Studio Code</li>
+            <li>Hyper Terminal</li>
+            <li>Dracula Theme</li>
+            <li>Sketch for design</li>
+            <li>Spotify for music</li>
+            <li>Evernote for notes</li>
+          </S.GeneralList>
+        </div>
+      </div>
+
+      <S.GeneralH2>The blog</S.GeneralH2>
     </S.GeneralWrapper>
   </Layout>
 )
