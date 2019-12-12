@@ -47,3 +47,10 @@ export const GeneralEmphasis = styled.em`
   font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 2rem;
 `
+
+export const GeneralList = styled.ul`
+  ${props => props.theme.General_Paragraph}
+  list-style: disc;
+  padding-left: 2.4rem;
+  margin-bottom: 2.4rem;
+`

@@ -59,6 +59,16 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  /* Responsiveness */
+  img,
+  iframe,
+  object,
+  embed,
+  video {
+    height: auto;
+    max-width: 100%;
+  }
+
   /* End of reset styles */
 
   html {

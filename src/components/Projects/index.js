@@ -137,7 +137,7 @@ const Projects = () => {
           of things and realize, in practice, how Gatsby is incredibly amazing! Working
           with React and GraphQL is awesome, and the Gatsby's pluggable ecosystem turns
           everything so easy. You can read more{' '}
-          <S.GeneralLink href="#">here</S.GeneralLink> to check in depth the process of
+          <S.GeneralLink href="#">here</S.GeneralLink> to check an in depth process of
           building this blog.
         </S.GeneralParagraph>
         <S.GeneralParagraph>

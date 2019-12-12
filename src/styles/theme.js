@@ -57,6 +57,7 @@ const theme = {
   General_Paragraph: `
     font-size: 2.4rem;
     line-height: 3.2rem;
+    letter-spacing: 0.6px;
   `,
   General_Tag: `
     font-size: 1.6rem;
