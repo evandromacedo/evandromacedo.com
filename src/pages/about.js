@@ -18,7 +18,7 @@ const AboutPage = () => (
       <S.GeneralH1>About</S.GeneralH1>
 
       <S.GeneralDescription>
-        <S.GeneralEmphasis>Me, Skillset, Usage, Interests, The Blog</S.GeneralEmphasis>
+        <S.GeneralEmphasis>Me, Skillset, Usage and The blog</S.GeneralEmphasis>
       </S.GeneralDescription>
 
       <S.GeneralH2>Me</S.GeneralH2>
@@ -118,6 +118,7 @@ const AboutPage = () => (
             <li>External monitor LG 21,5" 22MP55PQ</li>
             <li>Magic Keyboard</li>
             <li>Magic Mouse</li>
+            <li>Apple EarPods</li>
           </S.GeneralList>
         </div>
 
@@ -137,6 +138,39 @@ const AboutPage = () => (
       </div>
 
       <S.GeneralH2>The blog</S.GeneralH2>
+
+      <S.GeneralParagraph>
+        It was made with the intention of sharing some of my knowledge and document how I
+        solved technical and non-technical problems. The absence of comments in this site
+        is intentional, but you can reach me in any social media if you want to say
+        something.
+      </S.GeneralParagraph>
+
+      <S.GeneralParagraph>
+        This blog is powered by{' '}
+        <S.GeneralLink target="blank" href="https://www.gatsbyjs.org/">
+          Gatsby
+        </S.GeneralLink>
+        . The search functionality is powered by{' '}
+        <S.GeneralLink target="blank" href="https://www.algolia.com/">
+          Algolia
+        </S.GeneralLink>
+        . The source code is{' '}
+        <S.GeneralLink
+          target="blank"
+          href="https://github.com/evandromacedo/evandromacedo.com"
+        >
+          publicly available
+        </S.GeneralLink>{' '}
+        and you can{' '}
+        <S.GeneralLink
+          target="blank"
+          href="https://github.com/evandromacedo/evandromacedo.com/pulls"
+        >
+          submit a pull request
+        </S.GeneralLink>{' '}
+        if you see something wrong. Thank you!
+      </S.GeneralParagraph>
     </S.GeneralWrapper>
   </Layout>
 )
