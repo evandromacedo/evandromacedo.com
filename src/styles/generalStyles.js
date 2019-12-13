@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import mediaQuery from '../styles/mediaQuery'
 
 export const GeneralWrapper = styled.section`
-  max-width: 97.6rem;
+  max-width: 99.2rem;
   padding: 0 1.6rem;
   margin: 0 auto;
 

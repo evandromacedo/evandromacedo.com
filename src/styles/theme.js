@@ -94,6 +94,7 @@ const theme = {
 
   // Breakpoints
   large: '1170px',
+  medium: '768px',
   small: '480px',
   socialLinks: '960px',
   header: '848px',
