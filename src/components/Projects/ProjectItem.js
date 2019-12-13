@@ -1,29 +1,26 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
 import * as S from './styled'
-import * as GS from '../../styles/generalStyles'
 
 const ProjectItem = ({ title, imgSharp, imgWidth, links, children }) => (
   <>
-    <GS.GeneralH2>{title}</GS.GeneralH2>
+    <h2>{title}</h2>
     <S.ProjectItemImgWrapper imgWidth={imgWidth}>
       <Img alt={title} fluid={imgSharp} />
     </S.ProjectItemImgWrapper>
     <S.ProjectItemLinksWrapper>
-      <GS.GeneralLink target="blank" href={links[0].href}>
-        {links[0].label}
-      </GS.GeneralLink>
-      {links[1] && (
-        <>
-          {' / '}
-          <GS.GeneralLink target="blank" href={links[1].href}>
-            {links[1].label}
-          </GS.GeneralLink>
-        </>
-      )}
-      {'.'}
+      {links.map((link, i) => {
+        return (
+          <Fragment key={i}>
+            <a target="blank" href={link.href}>
+              {link.label}
+            </a>
+            {i === links.length - 1 ? '.' : ', '}
+          </Fragment>
+        )
+      })}
     </S.ProjectItemLinksWrapper>
     {children}
   </>
