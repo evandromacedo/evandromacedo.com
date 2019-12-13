@@ -88,11 +88,7 @@ const baseLinkStyles = css`
   }
 `
 
-export const MenuLinksItem = styled.li`
-  .blog {
-    ${baseLinkStyles}
-  }
-`
+export const MenuLinksItem = styled.li``
 
 export const MenuLinksLink = styled(Link)`
   ${baseLinkStyles}
