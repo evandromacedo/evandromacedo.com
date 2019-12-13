@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import mediaQuery from '../../styles/mediaQuery'
 import { ThemeBulbWrapper } from '../ThemeBulb/styled'
 import { Link } from 'gatsby'
@@ -70,9 +70,7 @@ export const MenuLinksList = styled.ul`
   `}
 `
 
-export const MenuLinksItem = styled.li``
-
-export const MenuLinksLink = styled(Link)`
+const baseLinkStyles = css`
   ${props => props.theme.Header_MenuLink}
   color: var(--text);
   text-decoration: none;
@@ -87,4 +85,14 @@ export const MenuLinksLink = styled(Link)`
       color: var(--accent);
     }
   }
+`
+
+export const MenuLinksItem = styled.li`
+  .blog {
+    ${baseLinkStyles}
+  }
+`
+
+export const MenuLinksLink = styled(Link)`
+  ${baseLinkStyles}
 `

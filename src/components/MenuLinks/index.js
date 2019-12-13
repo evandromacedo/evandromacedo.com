@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import { SearchAlt2 as Search } from 'styled-icons/boxicons-regular/SearchAlt2'
 
-import getPathname from '../../utils/getPathname'
 import ThemeBulb from '../ThemeBulb'
 
 import * as S from './styled'
@@ -12,13 +12,9 @@ const MenuLinks = ({ isOpen, closeMenu }) => {
       {/* Nav Links */}
       <S.MenuLinksList>
         <S.MenuLinksItem>
-          <S.MenuLinksLink
-            to={'/'}
-            className={isBlogActive() ? 'active' : ''}
-            onClick={closeMenu}
-          >
+          <BlogLink to="/" onClick={closeMenu}>
             Blog
-          </S.MenuLinksLink>
+          </BlogLink>
         </S.MenuLinksItem>
         <S.MenuLinksItem>
           <S.MenuLinksLink to="/about/" activeClassName="active" onClick={closeMenu}>
@@ -48,7 +44,23 @@ const MenuLinks = ({ isOpen, closeMenu }) => {
   )
 }
 
-const isBlogActive = () =>
-  !['/about/', '/projects/', '/search/'].includes(getPathname()) ? true : false
+const BlogLink = props => {
+  const classObject = { className: 'blog active' }
+  const invalidPaths = ['/about/', '/projects/', '/search/']
+
+  return (
+    <Link
+      className="blog"
+      getProps={({ location, isCurrent }) => {
+        if (isCurrent) return classObject
+        if (!invalidPaths.includes(location.pathname)) return classObject
+        return null
+      }}
+      {...props}
+    >
+      {props.children}
+    </Link>
+  )
+}
 
 export default MenuLinks

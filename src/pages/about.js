@@ -90,11 +90,11 @@ const AboutPage = () => (
             <li>Sass</li>
             <li>Bootstrap / Foundation</li>
             <li>PHP</li>
-            <li>MySQL / PostgreSQL</li>
+            <li>SQL / MySQL / PostgreSQL</li>
             <li>Python / Django</li>
             <li>Ruby on Rails</li>
             <li>Java / JSF</li>
-            <li>Scrum and Kanban</li>
+            <li>Scrum / Kanban</li>
           </S.GeneralList>
         </div>
       </div>
