@@ -3,10 +3,9 @@ import { Link } from 'gatsby'
 
 const invalidPaths = ['/about/', '/projects/', '/search/']
 
-const isActive = className => ({ location, isCurrent }) => {
+const isActive = className => ({ location }) => {
   const activeClassObject = { className: className + ' active' }
 
-  if (isCurrent) return activeClassObject
   if (!invalidPaths.includes(location.pathname)) return activeClassObject
   return { className }
 }
