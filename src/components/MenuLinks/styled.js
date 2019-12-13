@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import mediaQuery from '../../styles/mediaQuery'
 import { ThemeBulbWrapper } from '../ThemeBulb/styled'
 import { Link } from 'gatsby'
+import CustomBlogLink from './CustomBlogLink'
 
 export const MenuLinksWrapper = styled.nav`
   display: grid;
@@ -94,5 +95,9 @@ export const MenuLinksItem = styled.li`
 `
 
 export const MenuLinksLink = styled(Link)`
+  ${baseLinkStyles}
+`
+
+export const MenuBlogLink = styled(CustomBlogLink)`
   ${baseLinkStyles}
 `

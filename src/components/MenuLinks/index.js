@@ -12,9 +12,9 @@ const MenuLinks = ({ isOpen, closeMenu }) => {
       {/* Nav Links */}
       <S.MenuLinksList>
         <S.MenuLinksItem>
-          <BlogLink to="/" onClick={closeMenu}>
+          <S.MenuBlogLink to="/" onClick={closeMenu}>
             Blog
-          </BlogLink>
+          </S.MenuBlogLink>
         </S.MenuLinksItem>
         <S.MenuLinksItem>
           <S.MenuLinksLink to="/about/" activeClassName="active" onClick={closeMenu}>
@@ -44,23 +44,40 @@ const MenuLinks = ({ isOpen, closeMenu }) => {
   )
 }
 
-const BlogLink = props => {
-  const classObject = { className: 'blog active' }
-  const invalidPaths = ['/about/', '/projects/', '/search/']
+// const BlogLink = props => {
+//   // const classObject = { className: 'blog active' }
+//   const invalidPaths = ['/about/', '/projects/', '/search/']
+//   const isActive = className => ({ location, isCurrent }) => {
+//     // const classObject = { className: className + 'blog active' }
+//     const activeClassObject = { className: className + ' active' }
 
-  return (
-    <Link
-      className="blog"
-      getProps={({ location, isCurrent }) => {
-        if (isCurrent) return classObject
-        if (!invalidPaths.includes(location.pathname)) return classObject
-        return null
-      }}
-      {...props}
-    >
-      {props.children}
-    </Link>
-  )
-}
+//     if (isCurrent) return activeClassObject
+//     if (!invalidPaths.includes(location.pathname)) return activeClassObject
+//     return { className }
+//   }
+
+//   console.log()
+
+//   return (
+//     <Link getProps={isActive(props.className)} {...props}>
+//       {props.children}
+//     </Link>
+//   )
+// }
+
+// const isActive = className => ({ location, isCurrent }) => {
+//   // const classObject = { className: className + 'blog active' }
+//   const activeClassObject = { className: className + ' active' }
+
+//   if (isCurrent) return activeClassObject
+//   if (!invalidPaths.includes(location.pathname)) return activeClassObject
+//   return { className }
+// }
+
+// export const MenuBlogLink = ({ className, ...props }) => (
+//   <Link getProps={isActive(props.className)} {...props}>
+//     {props.children}
+//   </Link>
+// )
 
 export default MenuLinks
