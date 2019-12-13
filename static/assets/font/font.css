@@ -1,0 +1,28 @@
+/* Font-faces */
+@font-face {
+  font-family: 'Garamond';
+  src: url(./Garamond-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garamond';
+  src: url(./Garamond-Italic.ttf) format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Garamond';
+  src: url(./Garamond-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garamond';
+  src: url(./Garamond-BoldItalic.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
