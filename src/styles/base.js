@@ -1,18 +1,8 @@
 import styled from 'styled-components'
 import mediaQuery from '../styles/mediaQuery'
 
-export const BaseWrapper = styled.section`
-  max-width: 99.2rem;
-  padding: 0 1.6rem;
-  margin: 0 auto;
-
-  ${mediaQuery.lessThan('header')`
-    padding: 0;
-  `}
-`
-
 export const BaseContent = styled.section`
-  max-width: 97.6rem;
+  max-width: 99.2rem;
   padding: 0 1.6rem;
   margin: 0 auto;
 
