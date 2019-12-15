@@ -118,7 +118,7 @@ export const PostMainContent = styled.section`
       font-size: 2.1rem;
       font-style: italic;
       margin: 0;
-      opacity: 0.6;
+      opacity: 0.8;
     }
   }
 
@@ -160,7 +160,7 @@ export const PostMainContent = styled.section`
   /* PrismJS */
   code.language-text {
     color: inherit;
-    padding: 0.2em 0.4em;
+    padding: 0.1em 0.2em;
     font-size: 75%;
     border-radius: 3px;
 
