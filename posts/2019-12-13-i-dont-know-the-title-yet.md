@@ -1,6 +1,6 @@
 ---
 title: >-
-  How to active navigation links on more than one route with Gatsby Link +
+  How to active navigation links in more than one route with Gatsby Link +
   Styled Components
 description: And why activeClassName and activeStyle are not enough
 date: '2019-12-13 06:16:21'
