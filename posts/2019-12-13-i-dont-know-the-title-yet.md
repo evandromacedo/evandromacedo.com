@@ -1,10 +1,12 @@
 ---
-title: I don't know the title yet
-description: Neither the description
+title: >-
+  How to active navigation links on more than one route with Gatsby Link +
+  Styled Components
+description: And why activeClassName and activeStyle are not enough
 date: '2019-12-13 06:16:21'
 tags:
-  - gatsby
   - react
+  - gatsby
   - styled components
 ---
 Gatsby has a powerful built-in `<Link>` component that prefetch resources from internal links and boosts tons of performance on your application, among other useful features. However, this component is not perfect when we are talking about styling your navigation links, even with the `activeClassName` and `activeStyle` functionalities.
