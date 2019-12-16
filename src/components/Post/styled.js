@@ -176,12 +176,63 @@ export const PostMainContent = styled.section`
   pre {
     margin: 0;
     padding: 1.4rem 1.6rem;
-    font-size: 1.6rem;
+    font-size: 1.6em;
     border-radius: 4px;
+  }
+
+  .gatsby-highlight-code-line {
+    background-color: #3d3d3d;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #e2777a;
+  }
+
+  /**
+   * Add back the container background-color, border-radius, padding, margin
+   * and overflow that we removed from <pre>.
+   */
+  .gatsby-highlight {
+    background-color: #2d2d2d;
+    border-radius: 0.4rem;
+    margin: 2.4rem 0;
+    padding: 1.6rem;
+    overflow: auto;
 
     body.dark & {
       border: 2px solid #3c4250;
     }
+  }
+
+  /**
+   * If you already use line highlighting
+   */
+
+  /* Adjust the position of the line numbers */
+  .gatsby-highlight pre[class*='language-'].line-numbers {
+    padding-left: 2.8em;
+  }
+
+  .gatsby-highlight .line-numbers-rows {
+    border-right: none;
+  }
+
+  /**
+   * Remove the default PrismJS theme background-color, border-radius, margin,
+   * padding and overflow.
+   * 1. Make the element just wide enough to fit its content.
+   * 2. Always fill the visible space in .gatsby-highlight.
+   * 3. Adjust the position of the line numbers
+   */
+  .gatsby-highlight pre[class*='language-'] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
   }
 
   pre.language-text > code.language-text {
@@ -189,6 +240,7 @@ export const PostMainContent = styled.section`
     background-color: transparent;
   }
 
+  /*
   .gatsby-highlight {
     margin-bottom: 2.4rem;
   }
@@ -201,5 +253,5 @@ export const PostMainContent = styled.section`
     padding-top: 1.6rem;
     padding-left: 1.6rem;
     border-right: none;
-  }
+  } */
 `
