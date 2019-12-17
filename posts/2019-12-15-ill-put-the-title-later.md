@@ -1,6 +1,6 @@
 ---
-title: How to active navigation links in more than one route with Gatsby Link + Styled Components
-description: And why activeClassName and activeStyle are not enough
+title: Active navigation links in many routes with Gatsby Link and Styled Components
+description: And why activeClassName and activeStyle are not enough.
 date: 2019-12-15 03:56:23
 tags: ['react', 'gatsby', 'styled components']
 image: desert.jpg
@@ -10,54 +10,54 @@ Gatsby has a powerful built-in `<Link>` component that prefetch resources from i
 
 ## The problem
 
-To understand the problem, let's pretend we are building a blog about cooking. Our home page will be a list of recipes. We have a `Nav` component with a bunch of links. We will use the `activeClassName` feature together with Styled Components:
+To understand the problem, let's pretend we are building a blog about cooking. Our home page will be a list of recipes. We have a `Nav` component with a bunch of links. We will use the `activeClassName` prop together with Styled Components:
 
-```jsx{numberLines: true}
+```jsx
 // components/Nav/index.js
 import React from 'react'
-import { Nav, List, ListItem, Link } from './styled'
+import { NavWrapper, NavList, NavListItem, NavListLink } from './styled'
 
 const Nav = () => (
-  <Nav>
-    <List>
-      <ListItem>
-        <ListLink to="/" activeClassName="active">
+  <NavWrapper>
+    <NavList>
+      <NavListItem>
+        <NavListLink to="/" activeClassName="active">
           Recipes
-        </ListLink>
-      </ListItem>
-      <ListItem>
-        <ListLink to="/favorites/" activeClassName="active">
+        </NavListLink>
+      </NavListItem>
+      <NavListItem>
+        <NavListLink to="/favorites/" activeClassName="active">
           Favorites
-        </ListLink>
-      </ListItem>
-      <ListItem>
-        <ListLink to="/about/" activeClassName="active">
+        </NavListLink>
+      </NavListItem>
+      <NavListItem>
+        <NavListLink to="/about/" activeClassName="active">
           About
-        </ListLink>
-      </ListItem>
-      <ListItem>
-        <ListLink to="/contact/" activeClassName="active">
+        </NavListLink>
+      </NavListItem>
+      <NavListItem>
+        <NavListLink to="/contact/" activeClassName="active">
           Contact
-        </ListLink>
-      </ListItem>
-    </List>
-  </Nav>
+        </NavListLink>
+      </NavListItem>
+    </NavList>
+  </NavWrapper>
 )
 
 export default Nav
 ```
 
 <!-- prettier-ignore -->
-```jsx{numberLines: true}
+```jsx
 // components/Nav/styled.js
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import styled from "styled-components"
+import { Link } from "gatsby"
 
-export const Nav = styled.nav`/* Some nav styles */`
-export const List = styled.ul`/* Some list styles */`
-export const ListItem = styled.li`/* Some list item styles */`
+export const NavWrapper = styled.nav`/* Some nav styles */`
+export const NavList = styled.ul`/* Some list styles */`
+export const NavListItem = styled.li`/* Some list item styles */`
 
-export const ListLink = styled(Link)`
+export const NavListLink = styled(Link)`
   color: blue;
   text-decoration: none;
 
@@ -70,7 +70,7 @@ export const ListLink = styled(Link)`
 
 Ok. At the moment, we have our links being styled when they are active especifically in this routes: `/`, `/favorites/`, `/about/` and `/contact/`. So let's suppose we have created a bunch of recipes and their routes are custom slugs like it's done at [Gatsby's reference guide](https://www.gatsbyjs.org/docs/programmatically-create-pages-from-data/).
 
-The routes would be things like `/the-best-swedish-meatballs`, `/how-to-cook-chicken` or `/what-to-cook-this-december`. Those pages are a recipe's post explaining how to prepare some food, so we would like to maintain the _Recipes_ navigation link active to inform the user they are still in a page related to recipes. However, at the moment the user leaves the home page and enters into some internal recipe's page, the `activeClassName` for the _Recipes_ doesn't work because we are not at `/` anymore, and this is right.
+The routes would be things like `/the-best-swedish-meatballs`, `/how-to-cook-chicken` or `/what-to-cook-this-december`. Those pages are a recipe's post explaining how to prepare some food, so we would like to maintain the _Recipes_ navigation link active to inform the user they are still in a page related to recipes. However, at the moment the user leaves the home page and enters into some internal recipe's page, the `activeClassName` for the _Recipes_ doesn't work because we are not at `/` anymore, and that's the right thing.
 
 So, how in the hell could we maintain the _Recipes_ navigation link active?!?!
 
@@ -92,13 +92,12 @@ To get around the _Recipes_ trouble described earlier, we can use the `location`
 
 Let's create another level of abstraction for this component. We won't use the `activeClassName` prop anymore, but the `getProps` to set some `className` in our link.
 
-We'll create a component called `RecipesNavLink` that will set an `active` class if the current pathname is the home `/` or any other `/some-recipe-post`. To do that so, we need to exclude all other paths that won't set the _Recipes_ active, and they are the rest: `/favorites/`, `/about/` and `/contact/`.
+We'll create a component called `RecipesLink` that will set an `active` class if the current pathname is the home `/` or any other `/some-recipe-post`. To do that so, we need to exclude all other paths that won't set the _Recipes_ active, and they are the rest: `/favorites/`, `/about/` and `/contact/`.
 
-<!-- prettier-ignore -->
-```jsx{numberLines: true}
-// components/Nav/RecipesNavLink.js
+```jsx
+// components/Nav/RecipesLink.js
 import React from 'react'
-import { Link } from 'gatsby-link'
+import { Link } from 'gatsby'
 
 const invalidPaths = ['/favorites/', '/about/', '/contact/']
 
@@ -110,58 +109,58 @@ const isActive = ({ location }) => {
   return null
 }
 
-const RecipesNavLink = props => (
+const RecipesLink = ({ children, ...props }) => (
   <Link getProps={isActive} {...props}>
-    {props.children}
+    {children}
   </Link>
 )
 
-export default RecipesNavLink
+export default RecipesLink
 ```
 
-And in the `Nav` component we'll use this component instead of the Gatsby's `<Link>` (just for the _Recipes_ link). For this link we don't need the `activeClassName` anymore because we are already setting the `.active` in the component itself:
+> If you try to use `window.location.pathname` directly in the component it will break in `gatsby build` because there is no `window` object in the build process. And if you try to be clever and use the `typeof window !== 'undefined' && window.location.pathname` trick, it will malfunction because the component doesn't listen to changes on the global `window` object anyway. Yep, I've tried this before. Only the Reach Route's location do the right work.
+
+And in the `Nav` we'll use this component instead of the Gatsby's `<Link>` for _Recipes_. We don't need the `activeClassName` anymore because we are setting the `active` class in the component itself:
 
 <!-- prettier-ignore -->
-```jsx{numberLines: true}
+```jsx{4,10-12}
 // components/Nav/index.js
 import React from 'react'
-import { Nav, List, ListItem, ListLink } from './styled'
-import RecipesNavLink from './RecipesNavLink'
+import { NavWrapper, NavList, NavListItem, NavListLink } from "./styled"
+import RecipesLink from './RecipesLink'
 
 const Nav = () => (
-  <Nav>
-    <List>
-      <ListItem>
-        <RecipesNavLink to="/">
+  <NavWrapper>
+    <NavList>
+      <NavListItem>
+        <RecipesLink to="/">
           Recipes
-        </RecipesNavLink>
-      </ListItem>
+        </RecipesLink>
+      </NavListItem>
       {/* The other links (...) */}
-    </List>
-  </Nav>
+    </NavList>
+  </NavWrapper>
 )
 
 export default Nav
 ```
 
-This will change only the behavior of the _Recipes_ link, and the other ones will continue to be `.active` only when they match the exact route.
-
-Now we can create some solutions for styling the links on Styled Components:
+The other links will remain as they are. Now we can create some solutions for styling the links on Styled Components. There are numerous ways to style these links, feel free to do your way if the two below doesn't fit for you.
 
 ### First solution: use `<li>` to style all links
 
-The simplest way. We can use our `<ListItem>` to style its child anchor tags. It will be applied to the `RecipesNavLink` as well as the other links:
+A simple way. We can use our `<ListItem>` to style its child anchor tags. It will be applied to the `RecipesLink` as well as the other links:
 
 <!-- prettier-ignore -->
-```jsx{numberLines: true}
+```jsx{8,19}
 // components/Nav/styled.js
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-export const Nav = styled.nav`/* Some nav styles */`
-export const List = styled.ul`/* Some list styles */`
+export const NavWrapper = styled.nav`/* Some nav styles */`
+export const NavList = styled.ul`/* Some list styles */`
 
-export const ListItem = styled.li`
+export const NavListItem = styled.li`
   & > a {
     color: blue;
     text-decoration: none;
@@ -172,28 +171,27 @@ export const ListItem = styled.li`
     }
   }
 `
-
-export const ListLink = styled(Link)``
+export const NavListLink = styled(Link)``
 ```
 
-This is the fastest way. However, if you want to straight style the `RecipesNavLink` like we did before on _ListLink_ `styled(Link)` instead of using a child selector `& > a`, you can follow with the second solution.
+This is a fast solution, however, if you want to straight style the recipes' link this way `styled(RecipesLink)` instead of using a child selector `& > a`, you can follow with the second solution.
 
-### Second solution: style `RecipesNavLink` directly
+### Second solution: style `RecipesLink` directly
 
-To do that, we'll need to make some changes in the component. We cannot simply do a `styled(RecipesNavLink)`. Why?
+To do that, we need to make some changes in the component. We cannot simply do a `styled(RecipesLink)`. Why?
 
-Styled Components do the work using CSS classes, right? And [according to the documentation](https://www.styled-components.com/docs/basics#styling-any-component):
+Styled Components do their work using CSS classes, right? And [according to the documentation](https://www.styled-components.com/docs/basics#styling-any-component):
 
-> The styled method works perfectly on all of your own or any third-party component, as long as they attach the passed className prop to a DOM element.
+> The styled method works perfectly on all of your own or any third-party component, **as long as they attach the passed className prop to a DOM element**.
 
-The problem is that the `getProps` prop from Reach Router **erases all the current `classNames`** from the component when you return a `{ className: 'active' }`. If we have only a `.active` class on the component, the styles provided by Styled Components will not be applied anymore.
+The problem is that the `getProps` prop from Reach Router **erases all the current `classNames`** from the component when you return a `{ className: 'active' }`. If we have only an `active` class on the component, the styles provided by Styled Components will not be applied anymore.
 
-But we can work around this just doing some JavaScript currying on the `isActive` method. We can save the initial classes setted by Styled Components by returning another function. Here is the magic:
+But we can work around this just doing some JavaScript _currying_ on the `isActive` method. We can store the initial class names setted by Styled Components by returning another function. Here is the magic:
 
-```jsx{numberLines: true}
-// components/Nav/RecipesNavLink.js
+```jsx{7-12,14-15}
+// components/Nav/RecipesLink.js
 import React from 'react'
-import { Link } from 'gatsby-link'
+import { Link } from 'gatsby'
 
 const invalidPaths = ['/favorites/', '/about/', '/contact/']
 
@@ -204,31 +202,33 @@ const isActive = className => ({ location }) => {
   return { className }
 }
 
-const RecipesNavLink = ({ className, ...props }) => (
+const RecipesLink = ({ className, children, ...props }) => (
   <Link getProps={isActive(className)} {...props}>
-    {props.children}
+    {children}
   </Link>
 )
 
-export default RecipesNavLink
+export default RecipesLink
 ```
 
 With `isActive(className)`, we store the initial value of `className` and just add an `active` class when necessary, without erasing the previous classes. And when the link is not active, we maintain the styles with `return { className }` instead of `return null`.
 
-Now we can style our links using `css` from Styled Components to reuse the styles:
+Now we can style our links using `css` from Styled Components to reuse the same styles on both links:
 
 <!-- prettier-ignore -->
-```jsx{numberLines: true}
+```jsx
 // components/Nav/styled.js
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components' // highlight-line
 import { Link } from 'gatsby'
-import RecipesNavLink from './RecipesNavLink'
+import RecipesLinkComponent from './RecipesLink' // highlight-line
 
-export const Nav = styled.nav`/* Some nav styles */`
-export const List = styled.ul`/* Some list styles */`
-export const ListItem = styled.li`/* Some list item styles */`
+export const NavWrapper = styled.nav`/* Some nav styles */`
+export const NavList = styled.ul`/* Some list styles */`
+export const NavListItem = styled.li`/* Some list item styles */`
 
+// highlight-next-line
 const baseLinkStyles = css`
+
   color: blue;
   text-decoration: none;
 
@@ -237,12 +237,14 @@ const baseLinkStyles = css`
     text-decoration: underline;
   }
 `
+// highlight-next-line
+export const RecipesLink = styled(RecipesLinkComponent)`
 
-export const RecipesLink = styled(RecipesNavLink)`
   ${baseLinkStyles}
 `
+// highlight-next-line
+export const NavListLink = styled(Link)`
 
-export const ListLink = styled(Link)`
   ${baseLinkStyles}
 `
 ```
@@ -250,39 +252,44 @@ export const ListLink = styled(Link)`
 And we change the `Nav` to use our new `RecipesLink` from `./styled`:
 
 <!-- prettier-ignore -->
-```jsx{numberLines: true}
+```jsx
 // components/Nav/index.js
 import React from 'react'
-import { Nav, List, ListItem, ListLink, RecipesLink } from './styled'
+import { NavWrapper, NavList, NavListItem, NavListLink, RecipesLink } from "./styled" // highlight-line
 
 const Nav = () => (
-  <Nav>
-    <List>
-      <ListItem>
+  <NavWrapper>
+    <NavList>
+      <NavListItem>
+        // highlight-range{1-3}
         <RecipesLink to="/">
           Recipes
         </RecipesLink>
-      </ListItem>
+      </NavListItem>
       {/* The other links (...) */}
-    </List>
-  </Nav>
+    </NavList>
+  </NavWrapper>
 )
 
 export default Nav
 ```
 
+And that's it. You can check a live version of this implementation on CodeSandbox if you want:
+
+[![Edit sad-antonelli-ybuvp](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/sad-antonelli-ybuvp?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FNav%2Findex.js&theme=dark)
+
 ---
 
 ## Matching child routes
 
-Another approach for solving these issues is to use child routes, also known as _greedy active_. We could create all recipes on routes starting with `/recipes/`, like `/recipes/how-to-cook-chicken`, and all these routes would activate our navigation link.
+Another approach for solving these issues is to use child routes, also known as _greedy active links_. But we must create all recipes on routes starting with `/recipes/`, like `/recipes/how-to-cook-chicken`, and all these routes will make our _Recipes_ navigation link active.
 
 ### Using `isPartiallyCurrent`
 
-We can use the `isPartiallyCurrent` property as described earlier. Our `RecipesNavLink` would be something like:
+We'll use the `isPartiallyCurrent` property as described earlier. Our `RecipesLink` would be something like:
 
-```jsx{numberLines: true}
-// components/Nav/RecipesNavLink.js
+```jsx
+// components/Nav/RecipesLink.js
 import React from 'react'
 import { Link } from 'gatsby-link'
 
@@ -290,16 +297,16 @@ const isActive = className => ({ isPartiallyCurrent }) => ({
   className: className + (isPartiallyCurrent ? ' active' : ''),
 })
 
-const RecipesNavLink = ({ className, ...props }) => (
+const RecipesLink = ({ className, children, ...props }) => (
   <Link getProps={isActive(className)} {...props}>
-    {props.children}
+    {children}
   </Link>
 )
 
-export default RecipesNavLink
+export default RecipesLink
 ```
 
-However, our recipes couldn't be on the route `/` anymore. Another page should be replaced for the home, or we could replicate the `/pages/recipes.js` on `/pages/index.js`, and both pages `/` and `/recipes/` would render the recipes.
+However, our recipes couldn't be on the index route `/` anymore. Another page should be replaced for the home, or we could replicate the `/pages/recipes.js` on `/pages/index.js`, and both pages `/` and `/recipes/` would render the recipes.
 
 Regardless, to work properly, our _Recipes_ navigation link would change to:
 
@@ -312,28 +319,30 @@ Regardless, to work properly, our _Recipes_ navigation link would change to:
 
 ### Using `isCurrent` and `location.pathname`
 
-Out of the `isPartiallyCurrent` property, we also have the `isCurrent` which is true when we are on the exact route. We could use this one together with `location.pathname` to match both `/` and `/recipes/how-to-cook-chicken` routes:
+We also have the `isCurrent` property which is true when we are on the exact route. We could use this along with `location.pathname` to match both `/` and `/recipes/how-to-cook-chicken` routes:
 
-```jsx{numberLines: true}
-// components/Nav/RecipesNavLink.js
+```jsx
+// components/Nav/RecipesLink.js
 import React from 'react'
 import { Link } from 'gatsby-link'
 
 const isActive = className => ({ isCurrent, location }) => {
   const activeClassName = { className: `${className} active` }
 
-  if (isCurrent) return activeClassName
-  if (location.pathname.startsWith('/recipes/')) return activeClassName
+  if (isCurrent || location.pathname.startsWith('/recipes/')) {
+    return activeClassName
+  }
+
   return { className }
 }
 
-const RecipesNavLink = ({ className, ...props }) => (
+const RecipesLink = ({ className, children, ...props }) => (
   <Link getProps={isActive(className)} {...props}>
-    {props.children}
+    {children}
   </Link>
 )
 
-export default RecipesNavLink
+export default RecipesLink
 ```
 
 This way we would maintain our _Recipes_ navigation link as before:
@@ -349,6 +358,10 @@ However, there wouldn't exist a `/recipes/` route on your application unless you
 
 ---
 
-## Conclusion
+There are various and various ways to solve those navigation link issues in Gatsby. All of them have their pros and cons. I think it's important to find the one that fits well in your application to provide the best user experience, instead of just using the `activeClassName` on all navigation links to match only exact routes.
 
-There are various and various ways to solve those navigation link issues. All of them have their pros and cons. I think it's important to find the one that fits well in your application to provide the best user experience, instead of just using the `activeClassName` on all navigation links to match exact routes.
+Some useful links:
+
+- [Gatsby Link API](https://www.gatsbyjs.org/docs/gatsby-link/)
+- [@reach/router’s Link component](https://github.com/gatsbyjs/gatsby/issues/7208)
+- [Issue: Add option to gatsby-link for matching active when on child routes](https://github.com/gatsbyjs/gatsby/issues/7208)
