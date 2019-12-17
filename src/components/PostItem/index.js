@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
+import kebabCase from 'lodash/kebabCase'
 
 import coffeeCount from '../../utils/coffeeCount'
 
@@ -18,7 +19,7 @@ const PostItem = ({ title, description, date, timeToRead, tags, slug }) => (
     <S.PostItemTags>
       {tags.map((tag, i) => (
         <Fragment key={i}>
-          <S.PostItemTag to={`/tags/${tag}`}>{tag}</S.PostItemTag>
+          <S.PostItemTag to={`/tags/${kebabCase(tag)}`}>{tag}</S.PostItemTag>
           {i !== tags.length - 1 && ', '}
         </Fragment>
       ))}

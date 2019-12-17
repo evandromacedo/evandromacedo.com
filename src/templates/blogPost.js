@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import kebabCase from 'lodash/kebabCase'
 import { graphql } from 'gatsby'
 
 import coffeeCount from '../utils/coffeeCount'
@@ -33,7 +34,7 @@ const BlogPost = ({ data, pageContext }) => {
           <S.PostTags>
             {post.frontmatter.tags.map((tag, i) => (
               <Fragment key={i}>
-                <S.PostTag to={`/tags/${tag}`}>{tag}</S.PostTag>
+                <S.PostTag to={`/tags/${kebabCase(tag)}`}>{tag}</S.PostTag>
                 {i !== post.frontmatter.tags.length - 1 && ', '}
               </Fragment>
             ))}
