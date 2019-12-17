@@ -19,6 +19,7 @@ export const TagPostsTitle = styled.h1`
 
 export const TagPostsLink = styled(Link)`
   ${props => props.theme.General_Link}
+  font-size: 2.1rem;
 
   &:before {
     content: '\\2190  ';

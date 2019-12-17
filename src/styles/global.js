@@ -75,6 +75,10 @@ const GlobalStyles = createGlobalStyle`
     font-size: 10px;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Garamond, Georgia, Cambria, Cochin, Times, 'Times New Roman', serif;
+  }
+
   body.light {
     --background: #F6F6F6;
     --text: #222222;
@@ -92,7 +96,7 @@ const GlobalStyles = createGlobalStyle`
     background: var(--background);
     color: var(--text);
     transition: background 0.4s, color 0.4s;
-    font-family: Garamond, Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Georgia, Cambria, Cochin, Times, 'Times New Roman', serif;
   }
 `
 

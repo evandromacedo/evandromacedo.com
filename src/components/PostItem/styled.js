@@ -31,12 +31,12 @@ export const PostItemWrapper = styled.article`
 export const PostItemDateAndReadTime = styled.small`
   ${props => props.theme.Home_PostDateAndReadTime}
   display: block;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
 `
 
 export const PostItemDescription = styled.p`
   ${props => props.theme.Home_PostDescription}
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
 `
 
 export const PostItemTags = styled.small`

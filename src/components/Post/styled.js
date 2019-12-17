@@ -41,7 +41,7 @@ export const PostTag = styled(Link)`
   }
 `
 
-export const PostDescription = styled.p`
+export const PostDescription = styled.h2`
   ${props => props.theme.General_Description}
   margin-bottom: 1.2rem;
 `
@@ -128,7 +128,6 @@ export const PostMainContent = styled.section`
 
   em {
     font-style: italic;
-    font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2rem;
   }
 
@@ -160,8 +159,8 @@ export const PostMainContent = styled.section`
   /* PrismJS */
   code.language-text {
     color: inherit;
-    padding: 0.1em 0.2em;
-    font-size: 75%;
+    padding: 0.1em 0.3em;
+    font-size: 80%;
     border-radius: 3px;
 
     body.light & {

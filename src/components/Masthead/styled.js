@@ -38,6 +38,7 @@ export const MastheadAddInfoMobile = styled.span`
 `
 
 export const MastheadMobile = styled(Link)`
+  font-family: Garamond, Georgia, Cambria, Cochin, Times, 'Times New Roman', serif;
   display: none;
   font-size: 3.2rem;
   text-transform: lowercase;

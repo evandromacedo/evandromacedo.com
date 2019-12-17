@@ -17,6 +17,7 @@ const theme = {
     text-transform: lowercase;
   `,
   Header_MenuLink: `
+    font-family: Garamond, Georgia, Cambria, Cochin, Times, 'Times New Roman', serif;
     font-size: 2.1rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -24,12 +25,13 @@ const theme = {
 
   // Home
   Home_PostTitle: `
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     font-weight: bold;
   `,
   Home_PostDescription: `
+    font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2.1rem;
-    line-height: 2.7rem;
+    line-height: 2.6rem;
   `,
   Home_PostDateAndReadTime: `
     font-size: 1.6rem;
@@ -50,22 +52,21 @@ const theme = {
   `,
   General_Description: `
     font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     line-height: 3.2rem;
     font-style: italic;
+    font-weight: normal;
   `,
   General_Paragraph: `
     font-size: 2.4rem;
+    font-size: 2.1rem;
     line-height: 3.2rem;
-    // letter-spacing: 0.6px;
   `,
   General_Tag: `
     font-size: 1.6rem;
     font-style: italic;
   `,
   General_Link: `
-    font-size: 2.4rem;
-    line-height: 3.2rem;
     color: var(--accent);
 
     &:hover {

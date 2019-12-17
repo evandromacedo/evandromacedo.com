@@ -8,6 +8,5 @@ export const ProjectItemImgWrapper = styled.div`
 
 export const ProjectItemLinksWrapper = styled.p`
   margin: 0.8rem auto 2.4rem auto;
-  font-size: 2.4rem;
   text-align: center;
 `

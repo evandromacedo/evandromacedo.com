@@ -25,8 +25,6 @@ export const BaseContent = styled.section`
     ${props => props.theme.General_Description}
     margin-top: 0;
     margin-bottom: 4rem;
-    font-size: 2rem;
-    font-weight: normal;
   }
 
   h3 {
@@ -46,7 +44,6 @@ export const BaseContent = styled.section`
 
   em {
     font-style: italic;
-    font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2rem;
   }
 

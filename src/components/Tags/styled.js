@@ -19,6 +19,7 @@ export const TagsItem = styled.li`
 
 export const TagsLink = styled(Link)`
   ${props => props.theme.General_Link}
+  font-size: 2.1rem;
 `
 
 export const TagsCount = styled.small`
