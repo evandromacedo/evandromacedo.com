@@ -15,11 +15,10 @@ export const LayoutWrapper = styled.section`
 export const LayoutMain = styled.main`
   /* Sticky footer */
   min-height: calc(100vh - 37.8rem);
-  padding: 3.2rem 0;
+  padding: 2.4rem 0;
 
   ${mediaQuery.lessThan('header')`
     min-height: calc(100vh - 8.7rem);
-    padding: 2.4rem 0;
   `}
 `
 

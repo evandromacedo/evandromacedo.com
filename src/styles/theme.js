@@ -30,7 +30,7 @@ const theme = {
   `,
   Home_PostDescription: `
     font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2.1rem;
+    font-size: 2rem;
     line-height: 2.6rem;
   `,
   Home_PostDateAndReadTime: `
@@ -58,8 +58,7 @@ const theme = {
     font-weight: normal;
   `,
   General_Paragraph: `
-    font-size: 2.4rem;
-    font-size: 2.1rem;
+    font-size: 2rem;
     line-height: 3.2rem;
   `,
   General_Tag: `
@@ -69,8 +68,10 @@ const theme = {
   General_Link: `
     color: var(--accent);
 
-    &:hover {
-      opacity: 0.7;
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
     }
   `,
 

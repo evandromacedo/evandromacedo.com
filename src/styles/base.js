@@ -13,6 +13,10 @@ export const BaseContent = styled.section`
   h1 {
     ${props => props.theme.General_TitleH1}
     margin-bottom: 1.6rem;
+
+    ${mediaQuery.lessThan('header')`
+      font-size: 4rem;
+    `}
   }
 
   h2 {

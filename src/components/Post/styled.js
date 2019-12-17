@@ -17,6 +17,10 @@ export const PostHeader = styled.header``
 export const PostTitle = styled.h1`
   ${props => props.theme.General_TitleH1}
   margin-bottom: 1.6rem;
+
+  ${mediaQuery.lessThan('header')`
+    font-size: 4rem;
+  `}
 `
 
 export const PostDateAndReadTime = styled.p`
@@ -114,8 +118,6 @@ export const PostMainContent = styled.section`
     margin: 3.2rem auto;
 
     p {
-      font-family: Georgia, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      font-size: 2.1rem;
       font-style: italic;
       margin: 0;
       opacity: 0.8;
