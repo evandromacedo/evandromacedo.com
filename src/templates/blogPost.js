@@ -32,6 +32,7 @@ const BlogPost = ({ data, pageContext }) => {
             read
           </S.PostDateAndReadTime>
           <S.PostTags>
+            Tags:{' '}
             {post.frontmatter.tags.map((tag, i) => (
               <Fragment key={i}>
                 <S.PostTag to={`/tags/${kebabCase(tag)}`}>{tag}</S.PostTag>

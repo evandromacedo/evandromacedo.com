@@ -162,6 +162,7 @@ export const PostMainContent = styled.section`
     padding: 0.1em 0.3em;
     font-size: 80%;
     border-radius: 3px;
+    transition: 0.4s background-color;
 
     body.light & {
       background-color: #e0e0e0;

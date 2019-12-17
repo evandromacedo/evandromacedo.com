@@ -93,9 +93,9 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     --accent: #01AEEF;
-    background: var(--background);
+    background-color: var(--background);
     color: var(--text);
-    transition: background 0.4s, color 0.4s;
+    transition: background-color 0.4s, color 0.4s;
     font-family: Georgia, Cambria, Cochin, Times, 'Times New Roman', serif;
   }
 `
