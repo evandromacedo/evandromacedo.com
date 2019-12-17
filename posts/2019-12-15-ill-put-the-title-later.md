@@ -286,7 +286,7 @@ Another approach for solving these issues is to use child routes, also known as 
 
 ### Using `isPartiallyCurrent`
 
-We can use the `isPartiallyCurrent` property as described earlier. Our `RecipesLink` would be something like:
+We'll use the `isPartiallyCurrent` property as described earlier. Our `RecipesLink` would be something like:
 
 ```jsx
 // components/Nav/RecipesLink.js
@@ -306,7 +306,7 @@ const RecipesLink = ({ className, children, ...props }) => (
 export default RecipesLink
 ```
 
-However, our recipes couldn't be on the route `/` anymore. Another page should be replaced for the home, or we could replicate the `/pages/recipes.js` on `/pages/index.js`, and both pages `/` and `/recipes/` would render the recipes.
+However, our recipes couldn't be on the index route `/` anymore. Another page should be replaced for the home, or we could replicate the `/pages/recipes.js` on `/pages/index.js`, and both pages `/` and `/recipes/` would render the recipes.
 
 Regardless, to work properly, our _Recipes_ navigation link would change to:
 
@@ -319,7 +319,7 @@ Regardless, to work properly, our _Recipes_ navigation link would change to:
 
 ### Using `isCurrent` and `location.pathname`
 
-Out of the `isPartiallyCurrent` property, we also have the `isCurrent` which is true when we are on the exact route. We could use this one together with `location.pathname` to match both `/` and `/recipes/how-to-cook-chicken` routes:
+We also have the `isCurrent` property which is true when we are on the exact route. We could use this along with `location.pathname` to match both `/` and `/recipes/how-to-cook-chicken` routes:
 
 ```jsx
 // components/Nav/RecipesLink.js
@@ -329,8 +329,10 @@ import { Link } from 'gatsby-link'
 const isActive = className => ({ isCurrent, location }) => {
   const activeClassName = { className: `${className} active` }
 
-  if (isCurrent) return activeClassName
-  if (location.pathname.startsWith('/recipes/')) return activeClassName
+  if (isCurrent || location.pathname.startsWith('/recipes/')) {
+    return activeClassName
+  }
+
   return { className }
 }
 
@@ -356,6 +358,10 @@ However, there wouldn't exist a `/recipes/` route on your application unless you
 
 ---
 
-## Conclusion
+There are various and various ways to solve those navigation link issues in Gatsby. All of them have their pros and cons. I think it's important to find the one that fits well in your application to provide the best user experience, instead of just using the `activeClassName` on all navigation links to match only exact routes.
 
-There are various and various ways to solve those navigation link issues. All of them have their pros and cons. I think it's important to find the one that fits well in your application to provide the best user experience, instead of just using the `activeClassName` on all navigation links to match exact routes.
+Some useful links:
+
+- [Gatsby Link API](https://www.gatsbyjs.org/docs/gatsby-link/)
+- [@reach/router’s Link component](https://github.com/gatsbyjs/gatsby/issues/7208)
+- [Issue: Add option to gatsby-link for matching active when on child routes](https://github.com/gatsbyjs/gatsby/issues/7208)
