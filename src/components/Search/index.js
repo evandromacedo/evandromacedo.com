@@ -7,10 +7,8 @@ import {
   Stats,
   connectStateResults,
 } from 'react-instantsearch-dom'
-
-import Hit from './Hit'
-
 import * as S from './styled'
+import Hit from './Hit'
 
 const algolia = {
   appId: process.env.GATSBY_ALGOLIA_APP_ID,

@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
-
 import * as S from './styled'
 import GlobalStyles from '../../styles/global'
 import theme from '../../styles/theme'
-
 import Header from '../Header'
 
 const Layout = ({ children, footer }) => {

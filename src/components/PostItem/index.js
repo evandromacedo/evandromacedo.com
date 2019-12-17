@@ -1,10 +1,8 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import kebabCase from 'lodash/kebabCase'
-
-import coffeeCount from '../../utils/coffeeCount'
-
 import * as S from './styled'
+import coffeeCount from '../../utils/coffeeCount'
 
 const PostItem = ({ title, description, date, timeToRead, tags, slug }) => (
   <S.PostItemWrapper>

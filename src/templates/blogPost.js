@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react'
 import kebabCase from 'lodash/kebabCase'
 import { graphql } from 'gatsby'
-
 import coffeeCount from '../utils/coffeeCount'
+import * as S from '../components/Post/styled'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import RecommendedPosts from '../components/RecommendedPosts'
-
-import * as S from '../components/Post/styled'
 
 const BlogPost = ({ data, pageContext }) => {
   const post = data.markdownRemark

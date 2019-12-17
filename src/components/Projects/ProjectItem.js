@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
-
 import * as S from './styled'
 
 const ProjectItem = ({ title, imgSharp, imgWidth, links, children }) => (

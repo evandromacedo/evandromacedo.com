@@ -1,9 +1,7 @@
 import React from 'react'
-
-import Icons from './Icons'
-import links from './content'
-
 import * as S from './styled'
+import links from './content'
+import Icons from './Icons'
 
 const SocialLinks = () => (
   <S.SocialLinksWrapper>

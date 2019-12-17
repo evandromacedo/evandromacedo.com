@@ -1,9 +1,7 @@
 import React from 'react'
-
+import * as S from '../components/NotFound/styled'
 import SEO from '../components/SEO'
 import Me from '../components/Me'
-
-import * as S from '../components/NotFound/styled'
 import GlobalStyles from '../styles/global'
 
 const NotFoundPage = () => (

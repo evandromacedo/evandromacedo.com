@@ -1,9 +1,7 @@
 import React from 'react'
 import { SearchAlt2 as Search } from 'styled-icons/boxicons-regular/SearchAlt2'
-
-import ThemeBulb from '../ThemeBulb'
-
 import * as S from './styled'
+import ThemeBulb from '../ThemeBulb'
 
 const MenuLinks = ({ isOpen, closeMenu }) => (
   <S.MenuLinksWrapper isOpen={isOpen}>

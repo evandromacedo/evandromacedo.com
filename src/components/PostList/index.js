@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import withSizes from 'react-sizes'
-
 import theme from '../../styles/theme'
-import PostItem from '../PostItem'
-
 import * as S from './styled'
+import PostItem from '../PostItem'
 
 const PostList = ({ posts, columns }) => {
   const postGrid = Array.from({ length: columns }).map(() => [])

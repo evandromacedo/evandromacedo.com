@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
 import { Lightbulb } from 'styled-icons/fa-regular/Lightbulb'
-
 import * as S from './styled'
 
 const ThemeLightbulb = () => {

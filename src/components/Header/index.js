@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-
-import info from './content'
 import getPathname from '../../utils/getPathname'
+import info from './content'
+import * as S from './styled'
 import Me from '../Me'
 import Masthead from '../Masthead'
 import SocialLinks from '../SocialLinks'
@@ -9,8 +9,6 @@ import ThemeBulb from '../ThemeBulb'
 import MenuLinks from '../MenuLinks'
 import MenuIcon from './MenuIcon'
 import CloseIcon from './CloseIcon'
-
-import * as S from './styled'
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)

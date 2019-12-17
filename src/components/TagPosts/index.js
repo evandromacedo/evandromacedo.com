@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import PostList from '../PostList'
-
 import * as S from './styled'
+import PostList from '../PostList'
 
 const TagPosts = ({ tag, totalCount, posts }) => {
   return (

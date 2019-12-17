@@ -1,10 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-
-import ProjectItem from './ProjectItem'
-import projects from './content'
-
 import { BaseContent } from '../../styles/base'
+import projects from './content'
+import ProjectItem from './ProjectItem'
 
 const Projects = () => {
   const {

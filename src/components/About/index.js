@@ -1,9 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-
-import { BaseContent } from '../../styles/base'
 import * as S from './styled'
+import { BaseContent } from '../../styles/base'
 
 const About = () => {
   const { meWithBeers } = useStaticQuery(graphql`

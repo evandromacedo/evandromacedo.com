@@ -1,6 +1,5 @@
 import React from 'react'
 import kebabCase from 'lodash/kebabCase'
-
 import * as S from './styled'
 
 const Tags = ({ tags }) => (
