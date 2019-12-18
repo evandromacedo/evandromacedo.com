@@ -49,7 +49,7 @@ export const SearchWrapper = styled.section`
   .ais-Hits-list {
     display: grid;
     grid-gap: 3.2rem;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 `
 
