@@ -54,13 +54,12 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "clean_serve": "gatsby clean && gatsby build && gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/evandromacedo/evandromacedo.com"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/evandromacedo/evandromacedo.com/issues"
   }
 }
