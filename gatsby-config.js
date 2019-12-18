@@ -6,7 +6,7 @@ module.exports = {
     title: `Evandro Macedo`,
     description: `A blog by Evandro Macedo about Web Development focused on Front-end.`,
     author: `@evandromacedo_`,
-    siteUrl: `https://evandromacedo.netlify.com`,
+    siteUrl: `https://www.evandromacedo.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
