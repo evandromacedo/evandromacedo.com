@@ -1,5 +1,5 @@
 ---
-title: Active navigation links in many routes with Gatsby Link and Styled Components
+title: Active navigation links in many routes with Gatsby and Styled Components
 description: And why activeClassName and activeStyle are not enough.
 date: 2019-12-15 03:56:23
 tags: ['react', 'gatsby', 'styled components']
