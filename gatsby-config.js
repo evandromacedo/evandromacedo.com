@@ -3,7 +3,7 @@ const queries = require('./src/utils/algoliaQueries')
 
 module.exports = {
   siteMetadata: {
-    title: `Evandro Macedo`,
+    title: `Evandro Macedo - Web Developer`,
     description: `A blog by Evandro Macedo about Web Development focused on Front-end.`,
     author: `@evandromacedo_`,
     siteUrl: `https://www.evandromacedo.com`,
