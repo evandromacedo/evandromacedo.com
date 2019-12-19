@@ -31,7 +31,7 @@ The whole design was made using [Sketch](https://www.sketch.com/). I usually do 
 
 ## Gatsby
 
-[Gatsby](https://www.gatsbyjs.org/) is a powerful framework for generating static sites. It uses [React](https://reactjs.org/) as front-end library, and [GraphQL](https://graphql.org/) to consume content and assets. To better understand what Gatsby does:
+This site is powered by [Gatsby](https://www.gatsbyjs.org/) which is an amazing framework for generating static sites. It uses [React](https://reactjs.org/) as front-end library, and [GraphQL](https://graphql.org/) to consume content and assets. To better understand what Gatsby does:
 
 - First it pulls data from many data sources (CMSs, Markdown, APIs, etc.) with GraphQL.
 - With data in hands, we create components and templates with React.
@@ -50,7 +50,7 @@ The framework uses a pluggable ecosystem and [there is a plugin](https://www.gat
 
 I use Markdown to write the posts of this blog. The [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/) plugin parses all Markdown files and makes them available on GraphQL for you to use on your components.
 
-To add syntax highlighting to posts' code blocks, I use PrismJS with the [gatsby-remark-prismjs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/) plugin.
+To add syntax highlighting on posts' code blocks, I use PrismJS with the [gatsby-remark-prismjs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/) plugin.
 
 ### PWA
 
@@ -114,7 +114,11 @@ export const SocialLinksList = styled.ul`
 
 ## Algolia
 
-<!-- Algolia -->
+The search functionality of this site is powered by [Algolia](https://www.algolia.com/). It's very fast and provides some features like query suggestions, typo tolerance, search by synonyms and custom rankings by attributes. It also has a powerful analytics tool that tells you the popular searches, geographical origin of the searches, no-results rate and more.
+
+I know that some applications (like e-commerce) can take more advantage of Algolia compared to this blog, but it's for free to personal projects so it's a good fit for me.
+
+## Deploy
 
 <!-- Deploy, Netlify -->
 
