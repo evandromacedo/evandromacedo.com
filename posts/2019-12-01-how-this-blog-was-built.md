@@ -3,6 +3,7 @@ title: How this blog was built
 description: The decisions made and technologies used behind this blog
 date: 2019-12-01 17:02:00
 tags: ['personal', 'gatsby']
+image: cover-small.png
 ---
 
 First, the repository of this blog is [open-source](https://github.com/evandromacedo/evandromacedo.com), so you can explore the code for the things described here. Second, this stack is fully inspired in [Willian Justen's stack](https://willianjusten.com.br/making-of-blog-novo/). If you understand portuguese and want to learn all these technologies, [he has an entire course](https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/?ranMID=39197&ranEAID=16ht5juwidA&ranSiteID=16ht5juwidA-iL5YMJd.vOOyQpz3pyqUhw&LSNPUBID=16ht5juwidA) about this.

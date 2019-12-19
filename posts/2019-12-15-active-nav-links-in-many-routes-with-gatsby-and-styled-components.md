@@ -3,7 +3,6 @@ title: Active navigation links in many routes with Gatsby and Styled Components
 description: And why activeClassName and activeStyle are not enough.
 date: 2019-12-15 03:56:23
 tags: ['react', 'gatsby', 'styled components']
-image: desert.jpg
 ---
 
 Gatsby has a powerful built-in `<Link>` component that prefetch resources from internal links and boosts tons of performance on your application, among other useful features. However, this component is not perfect when we are talking about styling your navigation links, even with the `activeClassName` and `activeStyle` functionalities.
