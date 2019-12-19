@@ -2,7 +2,7 @@ backend:
   name: github
   repo: evandromacedo/evandromacedo.com
   branch: master
-  site_domain: https://www.evandromacedo.com
+  site_url: https://www.evandromacedo.com
 
 publish_mode: editorial_workflow
 media_folder: 'static/assets/img'
