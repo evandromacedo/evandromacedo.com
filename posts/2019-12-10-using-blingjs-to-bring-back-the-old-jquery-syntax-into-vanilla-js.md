@@ -1,7 +1,7 @@
 ---
-title: Using bling.js to bring back the old jQuery syntax in Vanilla JS
+title: Using bling.js to bring back the old jQuery syntax into Vanilla JS
 description: If you don't know what $('.button').on(...) is, perhaps you are too young to read this post
-date: 2019-12-13 03:56:23
+date: 2019-12-10 04:19:23
 tags: ['javascript']
 ---
 

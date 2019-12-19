@@ -1,7 +1,7 @@
 ---
 title: How this blog was built
 description: The decisions made and technologies used behind this blog
-date: 2019-12-10 17:02:00
+date: 2019-12-01 17:02:00
 tags: ['personal', 'gatsby']
 ---
 
