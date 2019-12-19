@@ -84,8 +84,9 @@ const content = {
           of my thoughts, but building this site provided me an opportunity to learn lots
           of things and realize, in practice, how Gatsby is incredibly amazing! Working
           with React and GraphQL is awesome, and the Gatsby's pluggable ecosystem turns
-          everything so easy. You can read more <Link to="">here</Link> to check an in
-          depth process of building this blog.
+          everything so easy. You can read more{' '}
+          <Link to="/how-this-blog-was-built">here</Link> to check an in depth process of
+          building this blog.
         </p>
         <p>
           <em>
