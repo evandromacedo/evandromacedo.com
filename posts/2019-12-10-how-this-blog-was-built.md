@@ -1,11 +1,11 @@
 ---
 title: How this blog was built
-description: The decisions and tech used behind this blog
+description: The decisions made and technologies used behind this blog
 date: 2019-12-10 17:02:00
 tags: ['personal', 'gatsby']
 ---
 
-First, the repository of this blog is [open-source](https://github.com/evandromacedo/evandromacedo.com), so you can explore the code for the things described here. Second, this stack is fully inspired in [Willian Justen's stack](https://willianjusten.com.br/making-of-blog-novo/). If you understand portuguese and want to learn all these techs, [he has an entire course](https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/?ranMID=39197&ranEAID=16ht5juwidA&ranSiteID=16ht5juwidA-iL5YMJd.vOOyQpz3pyqUhw&LSNPUBID=16ht5juwidA) about this.
+First, the repository of this blog is [open-source](https://github.com/evandromacedo/evandromacedo.com), so you can explore the code for the things described here. Second, this stack is fully inspired in [Willian Justen's stack](https://willianjusten.com.br/making-of-blog-novo/). If you understand portuguese and want to learn all these technologies, [he has an entire course](https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/?ranMID=39197&ranEAID=16ht5juwidA&ranSiteID=16ht5juwidA-iL5YMJd.vOOyQpz3pyqUhw&LSNPUBID=16ht5juwidA) about this.
 
 ---
 
@@ -15,7 +15,7 @@ Before I talk about code, I'll briefly talk about the design. First of all, the 
 
 ![Newspaper](/newspaper.jpg)
 
-The whole design was made using [Sketch](https://www.sketch.com/). I usually do this steps when I'm building some layout:
+The whole design was made using [Sketch](https://www.sketch.com/). I usually follow these steps when I'm building some layout:
 
 1. Do some research to find what I want.
 1. Create a wireframe for mobile and desktop.
@@ -118,8 +118,20 @@ The search functionality of this site is powered by [Algolia](https://www.algoli
 
 I know that some applications (like e-commerce) can take more advantage of Algolia compared to this blog, but it's for free to personal projects so it's a good fit for me.
 
-## Deploy
+## Deploy - Netlify and NetlifyCMS
 
-<!-- Deploy, Netlify -->
+Probably the easiest thing I did when building this site. [Netlify](https://www.netlify.com/) has a really impressive and smooth deployment experience. I've just connected my GitHub repository, setted some environment variables, and in less than 30 seconds my application was live.
 
-<!-- Performance -->
+Netlify's continuous deployment lets you live preview how different branches will work, and the atomic deploy support allows you to _rollback_ effortlessly. It's also really simple to set your domain and SSL. By clicking in one button you have HTTPS enabled on your site. Seriously, it's amazing.
+
+I also use [Netlify CMS](https://www.netlifycms.org/) to write my posts. It's integrated with my GitHub repository and provides a simple interface for creating and editing the posts. It has an intuitive editorial workflow that organizes your posts into _drafts_, _in review_ and _ready_.
+
+---
+
+Thanks to all technologies I've used in this blog, specially Gatsby, I could get the best metrics and PWA enabled from the [Lighthouse](https://github.com/GoogleChrome/lighthouse) audit tool:
+
+![Lighthouse audit](/lighthouse.jpg)
+
+I'm really amazed with the results and how I could learn a lot from the development of this site. And like [Willian Justen](https://twitter.com/Willian_justen) always says:
+
+> There's nothing better than using your own blog as a test subject for learning.
