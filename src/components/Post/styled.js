@@ -158,6 +158,11 @@ export const PostMainContent = styled.section`
     }
   }
 
+  #twitter-widget-0,
+  .twitter-tweet {
+    margin: 2.4rem auto !important;
+  }
+
   /* PrismJS */
   code.language-text {
     color: inherit;

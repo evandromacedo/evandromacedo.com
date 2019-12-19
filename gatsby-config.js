@@ -55,10 +55,11 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 960,
-              quality: 90,
+              quality: 100,
               linkImagesToOriginal: false,
             },
           },
+          `gatsby-remark-static-images`,
           `gatsby-remark-lazy-load`,
           `gatsby-remark-prismjs`,
         ],
@@ -89,6 +90,7 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-offline`,
   ],
 }
