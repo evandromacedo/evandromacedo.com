@@ -59,6 +59,7 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
+          `gatsby-remark-static-images`,
           `gatsby-remark-lazy-load`,
           `gatsby-remark-prismjs`,
         ],
