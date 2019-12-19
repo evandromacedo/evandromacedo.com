@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import * as S from './styled'
 import { BaseContent } from '../../styles/base'
@@ -25,29 +25,34 @@ const About = () => {
       <h2>Me</h2>
 
       <p>
-        I'm Evandro Macedo, a web developer born in the Northeast of Brazil. I believe in
-        an independent World Wide Web with open knowledge and democratized information. I
-        was a curious and passionate kid about computers, raised by the internet and
-        guided by it ever since.
+        I'm Evandro Macedo, a web developer born in the Northeast of Brazil. I'm a
+        supporter of an independent World Wide Web with open knowledge and information for
+        everyone.
       </p>
       <p>
-        Before I graduated in Internet Systems Technology, I studied Computer Networks and
-        Chemistry (yeah, I don't know why) but I quickly realized they didn't fit for me.
-        After I started studying how the Web works I was fulfilled with enthusiasm and
-        have found this was the right career to follow.
+        I was a kid full of curiosity about computers, raised by the internet and guided
+        by it ever since. Before graduating in Internet Systems Technology, I studied
+        Computer Networks and Chemistry - yeah, I don't know why - but I quickly realized
+        they didn't fit for me. After I started studying how the Web works I was fulfilled
+        with enthusiasm and have found this was the right career to follow.
       </p>
       <p>
-        I find myself more interested in design and programming, so naturally I tend to
-        study more front-end development and client-side stuff in general. Most of the
-        time I'm working with HTML5, CSS3, ES6 and all the things derived from them. New
-        web technologies makes me excited to learn.
+        I find myself more interested in web design and programming, so naturally I tend
+        to study more front-end development and client-side stuff in general. I believe
+        that with all the digital inclusion we have today, if every programmer knew a
+        little bit about design and every designer knew a little bit about programming,
+        working without barriers, we could make a faster progress on the internet.
+      </p>
+      <p>
+        Most of the time I'm working with HTML5, CSS3, ES6 and all the things derived from
+        them. New web technologies makes me excited to learn.
       </p>
       <p>
         When I'm not coding probably I'm drinking some beer with my friends, watching a
         movie/series, playing guitar/bass, reading a book, playing a game or watching some{' '}
-        <a target="blank" href="https://www.youtube.com/watch?v=5TbUxGZtwGI">
+        <Anchor href="https://www.youtube.com/watch?v=5TbUxGZtwGI">
           video about the space-time like this one
-        </a>{' '}
+        </Anchor>{' '}
         and having an existencial crisis.
       </p>
       <Img alt="Me with beers" fluid={meWithBeers.childImageSharp.fluid} />
@@ -128,26 +133,40 @@ const About = () => {
       </p>
 
       <p>
-        This blog is powered by{' '}
-        <a target="blank" href="https://www.gatsbyjs.org/">
-          Gatsby
-        </a>
-        . The search functionality is powered by{' '}
-        <a target="blank" href="https://www.algolia.com/">
-          Algolia
-        </a>
-        . The source code is{' '}
-        <a target="blank" href="https://github.com/evandromacedo/evandromacedo.com">
+        This blog is powered by <Anchor href="https://www.gatsbyjs.org/">Gatsby</Anchor>.
+        The search functionality is powered by{' '}
+        <Anchor href="https://www.algolia.com/">Algolia</Anchor>. You can check more
+        details on <Link to="/how-this-blog-was-built/">how this blog was built</Link>{' '}
+        here. The source code is{' '}
+        <Anchor href="https://github.com/evandromacedo/evandromacedo.com">
           publicly available
-        </a>{' '}
+        </Anchor>{' '}
         and you can{' '}
-        <a target="blank" href="https://github.com/evandromacedo/evandromacedo.com/pulls">
+        <Anchor href="https://github.com/evandromacedo/evandromacedo.com/pulls">
           submit a pull request
-        </a>{' '}
+        </Anchor>{' '}
         if you see something wrong. Thank you!
       </p>
     </BaseContent>
   )
 }
+
+const Anchor = ({ href, children }) => (
+  <a href={href} target="_blank" rel="noopener noreferrer">
+    {children}
+  </a>
+)
+
+export const AboutFooter = () => (
+  <S.Footer>
+    <Anchor href="https://github.com/evandromacedo">GitHub</Anchor>
+    {' • '}
+    <Anchor href="https://twitter.com/evandromacedo_">Twitter</Anchor>
+    {' • '}
+    <Anchor href="https://www.linkedin.com/in/evandrohcm/">LinkedIn</Anchor>
+    {' • '}
+    <Anchor href="https://instagram.com/evan.macedo">Instagram</Anchor>
+  </S.Footer>
+)
 
 export default About

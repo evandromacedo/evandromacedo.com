@@ -38,3 +38,16 @@ export const Column = styled.div`
     margin-bottom: 0;
   }
 `
+
+export const Footer = styled.nav`
+  ${props => props.theme.General_Paragraph}
+  text-align: center;
+  text-transform: lowercase;
+  margin-bottom: 0;
+  border-top: 2px solid var(--accent);
+  padding-top: 0.8rem;
+
+  a {
+    ${props => props.theme.General_Link}
+  }
+`
