@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const content = {
   reactSimpleSnackbar: {
@@ -7,7 +8,7 @@ const content = {
     links: [
       {
         label: 'Docs and Demo',
-        href: 'https://evandromacedo.com/react-simple-snackbar',
+        href: 'https://evandromacedo.github.io/react-simple-snackbar',
       },
       {
         label: 'GitHub Repository',
@@ -83,8 +84,8 @@ const content = {
           of my thoughts, but building this site provided me an opportunity to learn lots
           of things and realize, in practice, how Gatsby is incredibly amazing! Working
           with React and GraphQL is awesome, and the Gatsby's pluggable ecosystem turns
-          everything so easy. You can read more <a href="#">here</a> to check an in depth
-          process of building this blog.
+          everything so easy. You can read more <Link to="">here</Link> to check an in
+          depth process of building this blog.
         </p>
         <p>
           <em>
@@ -101,7 +102,7 @@ const content = {
     links: [
       {
         label: 'Live Version',
-        href: 'https://evandromacedo.com/hip-hop-legend/',
+        href: 'https://evandromacedo.github.io/hip-hop-legend/',
       },
       {
         label: 'GitHub Repository',
