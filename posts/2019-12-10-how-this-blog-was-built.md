@@ -11,21 +11,23 @@ First, the repository of this blog is [open-source](https://github.com/evandroma
 
 ## The design
 
-Before I talk about code, I'll briefly talk about the design. First of all, the general UI of this blog was inspired by a newspaper layout:
+Before I talk about code, I'll briefly talk about the design. First of all, the general UI of this blog was inspired by newspapers layout:
 
 ![Newspaper](/newspaper.jpg)
 
-The whole design was made using [Sketch](https://www.sketch.com/). I usually follow these steps when I'm building some layout:
+The whole design was made using [Sketch](https://www.sketch.com/). I usually follow these steps when I'm building a layout:
 
 1. Do some research to find what I want.
 1. Create a wireframe for mobile and desktop.
 1. Create a _Styleguide_ page and...
-1. Define the color pallet that will be used in light and dark mode.
-1. Define the typography and the styles (like headline, subtitle, body, caption, etc.).
+1. Define the color pallet that will be used in light and dark (if exists) mode.
+1. Define the typography and its styles (like headline, subtitle, body, caption, etc.).
 1. Create an _Assets_ page and put everything that will be used there, like backgrounds and icons.
 1. Create a layout for mobile with less than 480px, then will expanding 'till desktop layout.
 
 ![Blog's layout](/blog-layout.jpg)
+
+Generally I change some things when I start to code and see the results on the browser.
 
 ---
 
@@ -38,13 +40,13 @@ This site is powered by [Gatsby](https://www.gatsbyjs.org/) which is an amazing 
 - When the work is done, Gatsby builds everything into static HTML, CSS and JS files.
 - With static files you can deploy your site easily on dozens of services. Gatsby now has its own [Gatsby Cloud service](https://www.gatsbyjs.com/cloud/).
 
-Gatsby does a great work on performance, loading only the critical content and prefetching data for internal links. It is also very safe because everything is static, so you won't have any trouble with things like _SQL Injection_. And the main advantage of Gatsby is that you are working with cutting edge technologies which causes an awesome _developer experience_. Other than that, it has an excellent documentation and great community, so almost every problem you have probably was solved by someone.
+Gatsby does a great work on performance, loading only the critical content and prefetching data for internal links. It is also very safe because everything is static, so you won't have any trouble with things like _SQL Injection_. And the main advantage of Gatsby is that you are working with cutting edge technologies and have an awesome _developer experience_. Other than that, it has an excellent documentation and a great community, so almost every problem you have probably has been solved by someone.
 
 The framework uses a pluggable ecosystem and [there is a plugin](https://www.gatsbyjs.org/plugins/) for everything you want. Below are some plugins I used:
 
 ### Gatsby Image
 
-[gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) provides a complete image optimization for your application, from image processing to advanced loading techniques. Among all the features, the ones that I like the most are the image resizing according to the device, lazy loading, and the _blur-up_ technique that shows a preview of the image while it loads.
+[gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) provides a complete image optimization for your application, from image processing to advanced loading techniques. Among all the features, the ones that I like the most are the image resizing according to the device, lazy loading and the _blur-up_ technique that shows a preview of the image while it loads.
 
 ### Markdown and PrismJS
 
@@ -59,7 +61,7 @@ The [default Gatsby starter](https://github.com/gatsbyjs/gatsby-starter-default)
 - [gatsby-plugin-manifest](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/): generates the web app manifest.
 - [gatsby-plugin-offline](https://www.gatsbyjs.org/packages/gatsby-plugin-offline/): creates a service worker and loads it into the client.
 
-With these 2 plugins you turn you site into a PWA with literally some lines of JSON configurations.
+With these 2 plugins you turn your site into a PWA with literally some lines of JSON configurations.
 
 ### Google Analytics and Sitemap
 
@@ -120,15 +122,15 @@ I know that some applications (like e-commerce) can take more advantage of Algol
 
 ## Deploy - Netlify and NetlifyCMS
 
-Probably the easiest thing I did when building this site. [Netlify](https://www.netlify.com/) has a really impressive and smooth deployment experience. I've just connected my GitHub repository, setted some environment variables, and in less than 30 seconds my application was live.
+Probably the easiest thing I did when building this site. [Netlify](https://www.netlify.com/) has a really impressive and smooth deployment experience. I just connected my GitHub repository, setted some environment variables, and in less than 30 seconds my application was live.
 
-Netlify's continuous deployment lets you live preview how different branches will work, and the atomic deploy support allows you to _rollback_ effortlessly. It's also really simple to set your domain and SSL. By clicking in one button you have HTTPS enabled on your site. Seriously, it's amazing.
+Netlify's continuous deployment lets you live preview how different branches will work, and the atomic deploy support allows you to _rollback_ effortlessly. It's also really simple to set your domain and SSL. By clicking on one button you have HTTPS enabled on your site. Seriously, it's amazing.
 
 I also use [Netlify CMS](https://www.netlifycms.org/) to write my posts. It's integrated with my GitHub repository and provides a simple interface for creating and editing the posts. It has an intuitive editorial workflow that organizes your posts into _drafts_, _in review_ and _ready_.
 
 ---
 
-Thanks to all technologies I've used in this blog, specially Gatsby, I could get the best metrics and PWA enabled from the [Lighthouse](https://github.com/GoogleChrome/lighthouse) audit tool:
+Thanks to all technologies I've used in this blog, specially Gatsby, I could get the best metrics and enabled PWA from the [Lighthouse](https://github.com/GoogleChrome/lighthouse) audit tool:
 
 ![Lighthouse audit](/lighthouse.jpg)
 
