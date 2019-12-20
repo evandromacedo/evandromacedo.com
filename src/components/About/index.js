@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import * as S from './styled'
 import { BaseContent } from '../../styles/base'
+import * as S from './styled'
 
 const About = () => {
   const { meWithBeers } = useStaticQuery(graphql`
@@ -61,7 +61,7 @@ const About = () => {
 
       <S.ColumnWrapper>
         <S.Column>
-          <h3>Currently using and studying:</h3>
+          <S.ColumnTitle>Currently using and studying:</S.ColumnTitle>
           <ul>
             <li>HTML5, CSS3 and ES6+Beyond</li>
             <li>Git</li>
@@ -78,7 +78,7 @@ const About = () => {
         </S.Column>
         <S.ColumnDivider />
         <S.Column>
-          <h3>Already worked with or studied:</h3>
+          <S.ColumnTitle>Already worked with or studied:</S.ColumnTitle>
           <ul>
             <li>AngularJS (1.x)</li>
             <li>jQuery</li>
@@ -98,7 +98,7 @@ const About = () => {
 
       <S.ColumnWrapper>
         <S.Column>
-          <h3>Hardware:</h3>
+          <S.ColumnTitle>Hardware:</S.ColumnTitle>
           <ul>
             <li>An old MacBook Pro (13", Mid 2012), Intel Core i5, 8GB RAM, 240GB SSD</li>
             <li>External monitor LG 21,5" 22MP55PQ</li>
@@ -109,7 +109,7 @@ const About = () => {
         </S.Column>
         <S.ColumnDivider />
         <S.Column>
-          <h3>Software:</h3>
+          <S.ColumnTitle>Software:</S.ColumnTitle>
           <ul>
             <li>Visual Studio Code</li>
             <li>Hyper Terminal</li>

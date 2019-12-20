@@ -23,10 +23,11 @@ export const ColumnDivider = styled.div`
   `}
 `
 
+export const ColumnTitle = styled.h3``
+
 export const Column = styled.div`
-  h3 {
+  ${ColumnTitle} {
     margin-top: 0;
-    margin-bottom: 2.4rem;
     text-align: center;
 
     ${mediaQuery.lessThan('medium')`
