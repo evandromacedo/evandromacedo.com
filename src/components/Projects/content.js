@@ -24,9 +24,10 @@ const content = {
           <a target="blank" href="https://material.io/components/snackbars/">
             Material Design Snackbars
           </a>
-          , but it's made to be simpler and doesn't perform custom actions. Particularly I
-          made this component to use in my own projects because none of the existing React
-          components published on NPM provided a simple solution like I wanted.
+          , but it's made to be a simple notification and not to perform custom actions.
+          Particularly, I made this component to use in my own projects because none of
+          the existing React components published on NPM provided a simple solution for my
+          purposes.
         </p>
         <p>
           <em>
@@ -55,10 +56,9 @@ const content = {
         <p>
           A League of Legend's Teamfight Tactics team builder. This little tool allows you
           to select champions and items to check the synergies results based on the
-          combinations you've made. Unfortunately the game has launched a new set of
-          champions and items recentelly, turning the patch of this app obsolete. However,
-          I made this for fun and to learn some tech I hadn't put in practice before, so
-          it was worth it anyway.
+          combinations you've made. The patch of this app is outdated at the moment and
+          I'll update it later. I made this for fun and to learn some tech I hadn't put in
+          practice yet.
         </p>
         <p>
           <em>
@@ -82,11 +82,10 @@ const content = {
         <p>
           Yeah, this site is open-source too. Firstly I made this focusing on share some
           of my thoughts, but building this site provided me an opportunity to learn lots
-          of things and realize, in practice, how Gatsby is incredibly amazing! Working
-          with React and GraphQL is awesome, and the Gatsby's pluggable ecosystem turns
-          everything so easy. You can read more{' '}
-          <Link to="/how-this-blog-was-built">here</Link> to check an in depth process of
-          building this blog.
+          of things and realize, in practice, how Gatsby is amazing. Working with React
+          and GraphQL is awesome, and the Gatsby's pluggable ecosystem turns everything so
+          easy. You can read more <Link to="/how-this-blog-was-built">here</Link> to check
+          an in depth process of building this blog.
         </p>
         <p>
           <em>

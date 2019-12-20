@@ -13,7 +13,7 @@ const ProjectItem = ({ title, imgSharp, imgWidth, links, children }) => (
       {links.map((link, i) => {
         return (
           <Fragment key={i}>
-            <a target="blank" href={link.href}>
+            <a href={link.href} target="_blank" rel="noopener noreferrer">
               {link.label}
             </a>
             {i === links.length - 1 ? '.' : ', '}

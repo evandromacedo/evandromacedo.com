@@ -22,10 +22,7 @@ const Projects = () => {
   return (
     <BaseContent>
       <h1>Projects</h1>
-      <h2 className="description">
-        Some of the random open-source stuff I've made, since the designing 'til the
-        deployment.
-      </h2>
+      <h2 className="description">Some of the random open-source stuff I've done.</h2>
 
       {allProjects.map((project, i) => (
         <ProjectItem
