@@ -6,5 +6,5 @@ Made from [Gatsby's blog starter](https://github.com/gatsbyjs/gatsby-starter-blo
 
 Before you run the project, set your own variables on `.env.sample` and rename the file to `.env`.
 
-- To run locally: `npm start`, then open https://localhost:8000.
-- To serve a clean build: `npm run clean_serve`, then open https://localhost:9000.
+- To run locally: `npm start`, then open http://localhost:8000.
+- To serve a clean build: `npm run clean_serve`, then open http://localhost:9000.
